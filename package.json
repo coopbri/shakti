@@ -13,6 +13,7 @@
   ],
   "scripts": {
     "build": "rollup -c rollup.config.ts",
+    "dev": "rollup -c rollup.config.ts -w",
     "test": "jest",
     "test:watch": "jest --watch",
     "prepublishOnly": "yarn build"
