@@ -8,6 +8,20 @@ const margin = css<{ m?: number }>`
 `;
 
 /**
+ * Margin along x-axis (left and right)
+ */
+const marginX = css<{ mx?: number }>`
+  margin: 0 ${(props) => props.mx}px;
+`;
+
+/**
+ * Margin along y-axis (top and bottom)
+ */
+const marginY = css<{ my?: number }>`
+  margin: ${(props) => props.my}px 0;
+`;
+
+/**
  * Padding (pixels)
  */
 const padding = css<{ p?: number }>`
@@ -15,9 +29,27 @@ const padding = css<{ p?: number }>`
 `;
 
 /**
+ * Padding along x-axis (left and right)
+ */
+const paddingX = css<{ px?: number }>`
+  padding: 0 ${(props) => props.px}px;
+`;
+
+/**
+ * Padding along y-axis (top and bottom)
+ */
+const paddingY = css<{ py?: number }>`
+  padding: ${(props) => props.py}px 0;
+`;
+
+/**
  * Base CSS styles
  */
 export const baseStyles = css`
   ${margin}
+  ${marginX}
+  ${marginY}
   ${padding}
+  ${paddingX}
+  ${paddingY}
 `;
