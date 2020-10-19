@@ -29,6 +29,18 @@ const mediaSizes: {
 };
 
 /**
+ * Augmented div with base styles mixed in.
+ */
+export const View = styled(BaseDiv)``;
+
+/**
+ * Augmented, flexbox-enabled div with base styles mixed in.
+ */
+export const Flex = styled(BaseDiv)`
+  display: flex;
+`;
+
+/**
  * Container component for nesting rows and columns. Flex by default with column flex direction.
  */
 export const Grid = styled(BaseDiv)`
