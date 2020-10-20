@@ -1,4 +1,5 @@
-// media breakpoints in pixels
+// Media breakpoints in pixels
+
 const breakpoints: { [key: string]: number } = {
   // extra small
   xs: 576,
