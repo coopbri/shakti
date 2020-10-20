@@ -1,3 +1,5 @@
+// main barrel
+
 import { Grid, Row, Col } from "./components/Layout/Layout";
 import { Text } from "./components/Text/Text";
 
