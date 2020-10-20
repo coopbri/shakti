@@ -1,3 +1,5 @@
+// Layout components (exported to public API).
+
 import styled from "styled-components";
 
 import { breakpoints } from "../../constants";

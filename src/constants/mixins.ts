@@ -1,4 +1,7 @@
+// CSS mixins. These should never be exposed to the public API.
+
 import { css } from "styled-components";
+
 import { IMarginProps, IPaddingProps, ITextBaseProps } from "../lib/types";
 
 /**
@@ -27,6 +30,9 @@ const padding = css<IPaddingProps>`
   padding-left: ${(props) => props.pl}px;
 `;
 
+/**
+ * Text
+ */
 const text = css<ITextBaseProps>`
   font-weight: ${(props) => props.bold && "bold"};
   font-weight: ${(props) => props.fw};
@@ -41,6 +47,9 @@ export const baseStyles = css`
   ${padding}
 `;
 
+/**
+ * Base text styles
+ */
 export const textStyles = css`
   ${text}
 `;
