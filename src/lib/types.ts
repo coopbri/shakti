@@ -39,7 +39,17 @@ export interface IPaddingProps {
 }
 
 /**
- * Interface for core decorative props, such as color and font weight.
+ * Interface for core color props.
+ * @param color {string} color
+ * @param bgColor {string} background color
+ */
+export interface IColorProps {
+  color?: string;
+  bgColor?: string;
+}
+
+/**
+ * Interface for core text props.
  * @param bold {boolean} bold
  * @param italic {boolean} italic
  * @param fw {number|string} font-weight
@@ -53,7 +63,7 @@ export interface ITextProps {
 /**
  * Base interface for HTML tag props. Composes elementary prop interfaces, such as margin.
  */
-export interface IBaseProps extends IMarginProps, IPaddingProps {}
+export interface IBaseProps extends IMarginProps, IPaddingProps, IColorProps {}
 
 /**
  * Base interface for HTML tag props that use text decoration, such as `p` tags.

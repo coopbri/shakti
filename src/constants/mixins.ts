@@ -2,7 +2,12 @@
 
 import { css } from "styled-components";
 
-import { IMarginProps, IPaddingProps, ITextBaseProps } from "../lib/types";
+import {
+  IColorProps,
+  IMarginProps,
+  IPaddingProps,
+  ITextProps,
+} from "../lib/types";
 
 /**
  * Margin (pixels)
@@ -33,10 +38,18 @@ const padding = css<IPaddingProps>`
 /**
  * Text
  */
-const text = css<ITextBaseProps>`
+const text = css<ITextProps>`
   font-weight: ${(props) => props.bold && "bold"};
   font-weight: ${(props) => props.fw};
   font-style: ${(props) => props.italic && "italic"};
+`;
+
+/**
+ * Color
+ */
+const color = css<IColorProps>`
+  color: ${(props) => props.color};
+  background-color: ${(props) => props.bgColor};
 `;
 
 /**
@@ -45,6 +58,7 @@ const text = css<ITextBaseProps>`
 export const baseStyles = css`
   ${margin}
   ${padding}
+  ${color}
 `;
 
 /**
