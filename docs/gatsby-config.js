@@ -13,8 +13,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "docs",
+        name: `docs`,
         path: `${__dirname}/src/content/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/assets/img/`,
       },
     },
     {
@@ -26,7 +33,7 @@ module.exports = {
         background_color: `#fffffc`,
         theme_color: `#fffffc`,
         display: `minimal-ui`,
-        icon: `assets/img/shakti_logo.png`,
+        icon: `assets/img/shakti-logo.png`,
       },
     },
   ],

@@ -4,7 +4,12 @@ import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Link } from "gatsby";
 import { Grid, Row, Col } from "shakti";
-import { createGlobalStyle, ThemeProvider } from "styled-components";
+import {
+  createGlobalStyle,
+  css,
+  ThemeProps,
+  ThemeProvider,
+} from "styled-components";
 
 import Navigation from "../components/Navigation";
 import theme, { ITheme } from "../constants/theme";
@@ -24,11 +29,29 @@ export const pageQuery = graphql`
   }
 `;
 
+/**
+ * Reset to clear browser CSS defaults, merged into global styles
+ */
+const cssReset = css`
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+`;
+
+/**
+ * Global CSS styles
+ */
 const GlobalStyle = createGlobalStyle`
+  ${cssReset}
   body {
-    background-color: ${({ theme }: ITheme) => theme.colors.background};
+    background-color: ${({ theme }: ThemeProps<ITheme>) =>
+      theme.colors.background};
+    color: ${({ theme }: ThemeProps<ITheme>) => theme.colors.text};
     font-family: Arial, Helvetica, sans-serif;
   }
+
+
 `;
 
 /**
@@ -38,9 +61,9 @@ const Page = ({ data: { mdx } }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Grid>
+      <Grid px={50}>
         <Row>
-          <Col size={1}>
+          <Col size={1} alignCenter>
             <Navigation />
           </Col>
 

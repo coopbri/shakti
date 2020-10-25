@@ -1,5 +1,5 @@
 <div align="center">
-<img alt="shakti" src="docs/assets/img/shakti_header.png" height="250px"/>
+<img alt="shakti" src="docs/assets/img/shakti-header.png" height="250px"/>
 </div>
 
 <div align="center"><b>A universal React component toolkit</b></div>
