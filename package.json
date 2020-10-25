@@ -4,7 +4,7 @@
   "description": "A universal React component toolkit.",
   "version": "0.0.0",
   "license": "MIT",
-  "private": "true",
+  "private": true,
   "main": "build/index.js",
   "module": "build/index.es.js",
   "types": "build/index.d.ts",

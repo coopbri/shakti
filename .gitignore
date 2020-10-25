@@ -1,3 +1,7 @@
 node_modules/
 build/
 *.log
+
+# Gatsby
+public/
+.cache/
