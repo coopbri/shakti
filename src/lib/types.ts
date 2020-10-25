@@ -39,6 +39,46 @@ export interface IPaddingProps {
 }
 
 /**
+ * Interface for flex-enabled `div`.
+ * @param flexRow {boolean} set flex direction to row
+ * @param flexCol {boolean} set flex direction to column
+ * @param flexRowReverse {boolean} set flex direction to row-reverse
+ * @param flexColReverse {boolean} set flex direction to column-reverse
+ * @param alignStart {boolean} align items to flex-start
+ * @param alignEnd {boolean} align-items to flex-end
+ * @param alignCenter {boolean} align items to center
+ * @param alignBaseline {boolean} align items to baseline
+ * @param justifyStart {boolean} justify content to flex-start
+ * @param justifyEnd {boolean} justify content to flex-end
+ * @param justifyCenter {boolean} justify content to center
+ * @param justifyBaseline {boolean} justify content to baseline
+ */
+export interface IFlexProps {
+  flexRow?: boolean;
+  flexCol?: boolean;
+  flexRowReverse?: boolean;
+  flexColReverse?: boolean;
+  alignStart?: boolean;
+  alignEnd?: boolean;
+  alignCenter?: boolean;
+  alignBaseline?: boolean;
+  justifyStart?: boolean;
+  justifyEnd?: boolean;
+  justifyCenter?: boolean;
+  justifyBaseline?: boolean;
+}
+
+/**
+ * Interface for grid column.
+ * @param size {number} relative width percentage of row (optional, defaults to 1)
+ * @param hide {string} media breakpoint to hide column at (optional)
+ */
+export interface IColProps {
+  size?: number;
+  hide?: string;
+}
+
+/**
  * Interface for core color props.
  * @param color {string} color
  * @param bgColor {string} background color
