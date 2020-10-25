@@ -4,13 +4,15 @@ import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Link } from "gatsby";
 import { Grid, Row, Col } from "shakti";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 
 import Navigation from "../components/Navigation";
+import theme, { ITheme } from "../constants/theme";
 
 const shortcodes = { Link };
 
 export const pageQuery = graphql`
-  query BlogPostQuery($id: String) {
+  query PageQuery($id: String) {
     mdx(id: { eq: $id }) {
       id
       body
@@ -22,26 +24,36 @@ export const pageQuery = graphql`
   }
 `;
 
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${({ theme }: ITheme) => theme.colors.background};
+    font-family: Arial, Helvetica, sans-serif;
+  }
+`;
+
 /**
- * Page template
+ * Documentation page template
  */
 const Page = ({ data: { mdx } }) => {
   return (
-    <Grid>
-      <Row>
-        <Col size={1}>
-          <Navigation />
-        </Col>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Grid>
+        <Row>
+          <Col size={1}>
+            <Navigation />
+          </Col>
 
-        <Col size={3}>
-          <h1>{mdx.frontmatter.title}</h1>
+          <Col size={3}>
+            <h1>{mdx.frontmatter.title}</h1>
 
-          <MDXProvider components={shortcodes}>
-            <MDXRenderer>{mdx.body}</MDXRenderer>
-          </MDXProvider>
-        </Col>
-      </Row>
-    </Grid>
+            <MDXProvider components={shortcodes}>
+              <MDXRenderer>{mdx.body}</MDXRenderer>
+            </MDXProvider>
+          </Col>
+        </Row>
+      </Grid>
+    </ThemeProvider>
   );
 };
 
