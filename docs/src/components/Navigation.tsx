@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
-import { View } from "shakti";
 import styled from "styled-components";
 
+import Divider from "./Divider";
 import theme from "../constants/theme";
 
 const Navigation = () => {
@@ -14,6 +14,20 @@ const Navigation = () => {
       <NavEntry>
         <NavLink to="/getting-started">Getting Started</NavLink>
       </NavEntry>
+
+      <Divider my={16} />
+
+      <NavEntry>
+        <NavLink to="/base">Base</NavLink>
+      </NavEntry>
+      <NavEntry>
+        <NavLink to="/layout">Layout</NavLink>
+      </NavEntry>
+      <NavEntry>
+        <NavLink to="/text">Text</NavLink>
+      </NavEntry>
+
+      <Divider my={16} />
     </NavList>
   );
 };

@@ -1,9 +1,9 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, navigate } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Link } from "gatsby";
-import { Grid, Row, Col, Text, View } from "shakti";
+import { Grid, Row, Col, View } from "shakti";
 import styled, {
   createGlobalStyle,
   css,
@@ -50,13 +50,14 @@ const GlobalStyle = createGlobalStyle`
       theme.colors.background};
     color: ${({ theme }: ThemeProps<ITheme>) => theme.colors.text};
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
   }
 
 
 `;
 
 /**
- * Documentation page template
+ * Layout template
  */
 const Layout = ({ data: { mdx } }) => {
   return (
@@ -65,7 +66,12 @@ const Layout = ({ data: { mdx } }) => {
       <Grid px={50}>
         <Row>
           <NavigatorCol size={1} alignCenter mr={50} pr={20} hide="sm">
-            <LogoContainer pb={20}>
+            <LogoContainer
+              pb={20}
+              onClick={() => {
+                navigate("/");
+              }}
+            >
               <Logo />
             </LogoContainer>
 
@@ -94,6 +100,10 @@ const NavigatorCol = styled(Col)`
 const LogoContainer = styled(View)`
   min-width: 150px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.accent};
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export default Layout;
