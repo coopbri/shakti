@@ -3,14 +3,15 @@ import { graphql } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Link } from "gatsby";
-import { Grid, Row, Col } from "shakti";
-import {
+import { Grid, Row, Col, Text, View } from "shakti";
+import styled, {
   createGlobalStyle,
   css,
   ThemeProps,
   ThemeProvider,
 } from "styled-components";
 
+import Logo from "../components/Logo";
 import Navigation from "../components/Navigation";
 import theme, { ITheme } from "../constants/theme";
 
@@ -57,15 +58,19 @@ const GlobalStyle = createGlobalStyle`
 /**
  * Documentation page template
  */
-const Page = ({ data: { mdx } }) => {
+const Layout = ({ data: { mdx } }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Grid px={50}>
         <Row>
-          <Col size={1} alignCenter>
+          <NavigatorCol size={1} alignCenter mr={50} pr={20} hide="sm">
+            <LogoContainer pb={20}>
+              <Logo />
+            </LogoContainer>
+
             <Navigation />
-          </Col>
+          </NavigatorCol>
 
           <Col size={3}>
             <h1>{mdx.frontmatter.title}</h1>
@@ -80,4 +85,15 @@ const Page = ({ data: { mdx } }) => {
   );
 };
 
-export default Page;
+const NavigatorCol = styled(Col)`
+  border-right: 1px solid ${({ theme }) => theme.colors.accent};
+  min-width: 200px;
+  max-width: 200px;
+`;
+
+const LogoContainer = styled(View)`
+  min-width: 150px;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.accent};
+`;
+
+export default Layout;

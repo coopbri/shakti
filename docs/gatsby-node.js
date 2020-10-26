@@ -25,7 +25,7 @@ exports.createPages = async ({ graphql, actions }) => {
       // slug from frontmatter
       path: node.frontmatter.path,
       // MDX content wrapper
-      component: path.resolve(`./src/templates/Page.tsx`),
+      component: path.resolve(`./src/templates/Layout.tsx`),
       context: { id: node.id },
     });
   });
