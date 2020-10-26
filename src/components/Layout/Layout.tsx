@@ -41,18 +41,22 @@ export const View = styled(BaseDiv)``;
  */
 export const Flex = styled(BaseDiv)<IFlexProps>`
   display: flex;
-  flex-direction: ${(props) => props.flexRow && "row"};
-  flex-direction: ${(props) => props.flexCol && "column"};
-  flex-direction: ${(props) => props.flexRowReverse && "row-reverse"};
-  flex-direction: ${(props) => props.flexColReverse && "column-reverse"};
-  align-items: ${(props) => props.alignStart && "flex-start"};
-  align-items: ${(props) => props.alignEnd && "flex-end"};
-  align-items: ${(props) => props.alignCenter && "center"};
-  align-items: ${(props) => props.alignBaseline && "baseline"};
-  justify-content: ${(props) => props.justifyStart && "flex-start"};
-  justify-content: ${(props) => props.justifyEnd && "flex-end"};
-  justify-content: ${(props) => props.justifyCenter && "center"};
-  justify-content: ${(props) => props.justifyBaseline && "baseline"};
+  flex-direction: ${({ flexRow }) => flexRow && "row"};
+  flex-direction: ${({ flexCol }) => flexCol && "column"};
+  flex-direction: ${({ flexRowReverse }) => flexRowReverse && "row-reverse"};
+  flex-direction: ${({ flexColReverse }) => flexColReverse && "column-reverse"};
+  align-items: ${({ alignStart }) => alignStart && "flex-start"};
+  align-items: ${({ alignEnd }) => alignEnd && "flex-end"};
+  align-items: ${({ alignCenter }) => alignCenter && "center"};
+  align-items: ${({ alignBaseline }) => alignBaseline && "baseline"};
+  justify-content: ${({ justifyStart }) => justifyStart && "flex-start"};
+  justify-content: ${({ justifyEnd }) => justifyEnd && "flex-end"};
+  justify-content: ${({ justifyCenter }) => justifyCenter && "center"};
+  justify-content: ${({ justifyBaseline }) => justifyBaseline && "baseline"};
+  justify-content: ${({ justifySpaceAround }) =>
+    justifySpaceAround && "space-around"};
+  justify-content: ${({ justifySpaceBetween }) =>
+    justifySpaceBetween && "space-between"};
 `;
 
 /**
@@ -72,7 +76,7 @@ export const Row = styled(Flex)``;
  */
 export const Col = styled(Flex)<IColProps>`
   flex-direction: column;
-  flex: ${(props) => props.size || 1};
+  flex: ${({ size }) => size || 1};
 
-  ${(props) => props.hide && mediaSizes[props.hide](`display: none;`)}
+  ${({ hide }) => hide && mediaSizes[hide](`display: none;`)}
 `;

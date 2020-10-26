@@ -13,43 +13,43 @@ import {
  * Margin (pixels)
  */
 const margin = css<IMarginProps>`
-  margin: ${(props) => props.m}px;
-  margin: 0 ${(props) => props.mx}px;
-  margin: ${(props) => props.my}px 0;
-  margin-top: ${(props) => props.mt}px;
-  margin-right: ${(props) => props.mr}px;
-  margin-bottom: ${(props) => props.mb}px;
-  margin-left: ${(props) => props.ml}px;
+  margin: ${({ m }) => m}px;
+  margin: 0 ${({ mx }) => mx}px;
+  margin: ${({ my }) => my}px 0;
+  margin-top: ${({ mt }) => mt}px;
+  margin-right: ${({ mr }) => mr}px;
+  margin-bottom: ${({ mb }) => mb}px;
+  margin-left: ${({ ml }) => ml}px;
 `;
 
 /**
  * Padding (pixels)
  */
 const padding = css<IPaddingProps>`
-  padding: ${(props) => props.p}px;
-  padding: 0 ${(props) => props.px}px;
-  padding: ${(props) => props.py}px 0;
-  padding-top: ${(props) => props.pt}px;
-  padding-right: ${(props) => props.pr}px;
-  padding-bottom: ${(props) => props.pb}px;
-  padding-left: ${(props) => props.pl}px;
+  padding: ${({ p }) => p}px;
+  padding: 0 ${({ px }) => px}px;
+  padding: ${({ py }) => py}px 0;
+  padding-top: ${({ pt }) => pt}px;
+  padding-right: ${({ pr }) => pr}px;
+  padding-bottom: ${({ pb }) => pb}px;
+  padding-left: ${({ pl }) => pl}px;
 `;
 
 /**
  * Text
  */
 const text = css<ITextProps>`
-  font-weight: ${(props) => props.bold && "bold"};
-  font-weight: ${(props) => props.fw};
-  font-style: ${(props) => props.italic && "italic"};
+  font-weight: ${({ bold }) => bold && "bold"};
+  font-weight: ${({ fw }) => fw};
+  font-style: ${({ italic }) => italic && "italic"};
 `;
 
 /**
  * Color
  */
 const color = css<IColorProps>`
-  color: ${(props) => props.color};
-  background-color: ${(props) => props.bgColor};
+  color: ${({ color }) => color};
+  background-color: ${({ bgColor }) => bgColor};
 `;
 
 /**
