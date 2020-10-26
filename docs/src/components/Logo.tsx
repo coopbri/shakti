@@ -22,7 +22,7 @@ const Logo = () => {
     console.log("Logo rendered");
   }, []);
 
-  return <Img fluid={data.logo.childImageSharp.fluid} />;
+  return <Img loading="eager" fluid={data.logo.childImageSharp.fluid} />;
 };
 
 export default Logo;
