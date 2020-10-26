@@ -12,10 +12,14 @@ import styled, {
 } from "styled-components";
 
 import Logo from "../components/Logo";
+import CodeBlock from "../components/CodeBlock";
 import Navigation from "../components/Navigation";
 import theme, { ITheme } from "../constants/theme";
 
-const shortcodes = { Link };
+const shortcodes = {
+  link: Link,
+  pre: CodeBlock,
+};
 
 export const pageQuery = graphql`
   query PageQuery($id: String) {

@@ -18,10 +18,6 @@ const Logo = () => {
     }
   `);
 
-  useEffect(() => {
-    console.log("Logo rendered");
-  }, []);
-
   return <Img loading="eager" fluid={data.logo.childImageSharp.fluid} />;
 };
 
