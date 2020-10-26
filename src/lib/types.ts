@@ -1,4 +1,14 @@
 /**
+ * Display interface for base HTML tag props.
+ * @param shown {boolean} show element (display block)
+ * @param hidden {boolean} hide element (display none)
+ */
+export interface IDisplayProps {
+  shown?: boolean;
+  hidden?: boolean;
+}
+
+/**
  * Margin interface for base HTML tag props.
  * @param m {number|string} margin
  * @param mx {number|string} margin along x-axis
@@ -72,12 +82,18 @@ export interface IFlexProps {
 
 /**
  * Interface for grid column.
- * @param size {number} relative width percentage of row (optional, defaults to 1)
- * @param hide {string} media breakpoint to hide column at (optional)
+ * @param size {number} relative width percentage of row (defaults to 1)
+ * @param showBelow {string} media breakpoint to show column at (shown at breakpoint or smaller)
+ * @param showAbove {string} media breakpoint to show column at (shown at breakpoint or larger)
+ * @param hideBelow {string} media breakpoint to hide column at (hidden at breakpoint or smaller)
+ * @param hideAbove {string} media breakpoint to hide column at (hidden at breakpoint or larger)
  */
 export interface IColProps {
   size?: number;
-  hide?: string;
+  showBelow?: string;
+  showAbove?: string;
+  hideBelow?: string;
+  hideAbove?: string;
 }
 
 /**
@@ -105,7 +121,11 @@ export interface ITextProps {
 /**
  * Base interface for HTML tag props. Composes elementary prop interfaces, such as margin.
  */
-export interface IBaseProps extends IMarginProps, IPaddingProps, IColorProps {}
+export interface IBaseProps
+  extends IDisplayProps,
+    IMarginProps,
+    IPaddingProps,
+    IColorProps {}
 
 /**
  * Base interface for HTML tag props that use text decoration, such as `p` tags.

@@ -7,28 +7,55 @@ import { IColProps, IFlexProps } from "../../lib/types";
 import { BaseDiv } from "../Base/Base";
 
 /**
- * Construct a max-width screen media query based on a specified breakpoint. Arbitrary styles can be mixed in.
+ * Construct a max-width screen media query based on a specified breakpoint.
+ * Arbitrary styles can be mixed in.
  * @param styles {string} arbitrary styles to be mixed into media query
  * @param breakpoint {number} pixel breakpoint for media query max-width
  *
  * @returns {string} constructed media query with styles mixed in, if specified
  */
-const constructMediaQuery = (
+const constructBelowMediaQuery = (
   styles: string,
   breakpoint: number,
 ): string => `@media only screen and (max-width: ${breakpoint}px) {
   ${styles}
 }`;
 
-// media sizes based on breakpoints
-const mediaSizes: {
+/**
+ * Construct a min-width screen media query based on a specified breakpoint.
+ * Arbitrary styles can be mixed in.
+ * @param styles {string} arbitrary styles to be mixed into media query
+ * @param breakpoint {number} pixel breakpoint for media query min-width
+ *
+ * @returns {string} constructed media query with styles mixed in, if specified
+ */
+const constructAboveMediaQuery = (
+  styles: string,
+  breakpoint: number,
+): string => `@media only screen and (min-width: ${breakpoint}px) {
+  ${styles}
+}`;
+
+// media sizes based on breakpoints (for below props)
+const belowMediaSizes: {
   [key: string]: (styles: string) => string;
 } = {
-  xs: (styles: string) => constructMediaQuery(styles, breakpoints.xs),
-  sm: (styles: string) => constructMediaQuery(styles, breakpoints.sm),
-  md: (styles: string) => constructMediaQuery(styles, breakpoints.md),
-  lg: (styles: string) => constructMediaQuery(styles, breakpoints.lg),
-  xl: (styles: string) => constructMediaQuery(styles, breakpoints.xl),
+  xs: (styles: string) => constructBelowMediaQuery(styles, breakpoints.xs),
+  sm: (styles: string) => constructBelowMediaQuery(styles, breakpoints.sm),
+  md: (styles: string) => constructBelowMediaQuery(styles, breakpoints.md),
+  lg: (styles: string) => constructBelowMediaQuery(styles, breakpoints.lg),
+  xl: (styles: string) => constructBelowMediaQuery(styles, breakpoints.xl),
+};
+
+// media sizes based on breakpoints (for above props)
+const aboveMediaSizes: {
+  [key: string]: (styles: string) => string;
+} = {
+  xs: (styles: string) => constructAboveMediaQuery(styles, breakpoints.xs),
+  sm: (styles: string) => constructAboveMediaQuery(styles, breakpoints.sm),
+  md: (styles: string) => constructAboveMediaQuery(styles, breakpoints.md),
+  lg: (styles: string) => constructAboveMediaQuery(styles, breakpoints.lg),
+  xl: (styles: string) => constructAboveMediaQuery(styles, breakpoints.xl),
 };
 
 /**
@@ -60,7 +87,8 @@ export const Flex = styled(BaseDiv)<IFlexProps>`
 `;
 
 /**
- * Container component for nesting rows and columns. Flex by default with column flex direction.
+ * Container component for nesting rows and columns. Flex by default with column
+ * flex direction.
  */
 export const Grid = styled(Flex)`
   flex-direction: column;
@@ -72,11 +100,22 @@ export const Grid = styled(Flex)`
 export const Row = styled(Flex)``;
 
 /**
- * Column component, nested in a row. Flex length is set to 1 unless a length is specified via the `size` prop.
+ * Column component, nested in a row. Flex length is set to 1 unless a length
+ * is specified via the `size` prop.
  */
 export const Col = styled(Flex)<IColProps>`
   flex-direction: column;
   flex: ${({ size }) => size || 1};
 
-  ${({ hide }) => hide && mediaSizes[hide](`display: none;`)}
+  ${({ showBelow }) =>
+    showBelow && belowMediaSizes[showBelow](`display: block !important;`)};
+
+  ${({ showAbove }) =>
+    showAbove && aboveMediaSizes[showAbove](`display: block !important;`)};
+
+  ${({ hideBelow }) =>
+    hideBelow && belowMediaSizes[hideBelow](`display: none !important;`)};
+
+  ${({ hideAbove }) =>
+    hideAbove && aboveMediaSizes[hideAbove](`display: none !important;`)};
 `;

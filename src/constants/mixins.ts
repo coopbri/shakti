@@ -5,10 +5,20 @@ import { css } from "styled-components";
 import checkType from "../lib/util/checkType";
 import {
   IColorProps,
+  IDisplayProps,
   IMarginProps,
   IPaddingProps,
   ITextProps,
 } from "../lib/types";
+
+/**
+ * Display
+ * important is set to force override existing default (e.g. display: flex)
+ */
+const display = css<IDisplayProps>`
+  display: ${({ shown }) => shown && "block !important"};
+  display: ${({ hidden }) => hidden && "none !important"};
+`;
 
 /**
  * Margin (pixels)
@@ -57,6 +67,7 @@ const color = css<IColorProps>`
  * Base CSS styles
  */
 export const baseStyles = css`
+  ${display}
   ${margin}
   ${padding}
   ${color}
