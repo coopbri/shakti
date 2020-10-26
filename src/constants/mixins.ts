@@ -2,6 +2,7 @@
 
 import { css } from "styled-components";
 
+import checkType from "../lib/util/checkType";
 import {
   IColorProps,
   IMarginProps,
@@ -13,26 +14,26 @@ import {
  * Margin (pixels)
  */
 const margin = css<IMarginProps>`
-  margin: ${({ m }) => m}px;
-  margin: 0 ${({ mx }) => mx}px;
-  margin: ${({ my }) => my}px 0;
-  margin-top: ${({ mt }) => mt}px;
-  margin-right: ${({ mr }) => mr}px;
-  margin-bottom: ${({ mb }) => mb}px;
-  margin-left: ${({ ml }) => ml}px;
+  margin: ${({ m }) => checkType(m)};
+  margin: 0 ${({ mx }) => (mx ? checkType(mx) : "px")};
+  margin: ${({ my }) => (my ? checkType(my) : "px")} 0;
+  margin-top: ${({ mt }) => checkType(mt)};
+  margin-right: ${({ mr }) => checkType(mr)};
+  margin-bottom: ${({ mb }) => checkType(mb)};
+  margin-left: ${({ ml }) => checkType(ml)};
 `;
 
 /**
  * Padding (pixels)
  */
 const padding = css<IPaddingProps>`
-  padding: ${({ p }) => p}px;
-  padding: 0 ${({ px }) => px}px;
-  padding: ${({ py }) => py}px 0;
-  padding-top: ${({ pt }) => pt}px;
-  padding-right: ${({ pr }) => pr}px;
-  padding-bottom: ${({ pb }) => pb}px;
-  padding-left: ${({ pl }) => pl}px;
+  padding: ${({ p }) => checkType(p)};
+  padding: 0 ${({ px }) => (px ? checkType(px) : "px")};
+  padding: ${({ py }) => (py ? checkType(py) : "py")} 0;
+  padding-top: ${({ pt }) => checkType(pt)};
+  padding-right: ${({ pr }) => checkType(pr)};
+  padding-bottom: ${({ pb }) => checkType(pb)};
+  padding-left: ${({ pl }) => checkType(pl)};
 `;
 
 /**

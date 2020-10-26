@@ -1,41 +1,41 @@
 /**
  * Margin interface for base HTML tag props.
- * @param m {number} margin
- * @param mx {number} margin along x-axis
- * @param my {number} margin along y-axis
- * @param mt {number} top margin
- * @param mr {number} right margin
- * @param mb {number} bottom margin
- * @param ml {number} left margin
+ * @param m {number|string} margin
+ * @param mx {number|string} margin along x-axis
+ * @param my {number|string} margin along y-axis
+ * @param mt {number|string} top margin
+ * @param mr {number|string} right margin
+ * @param mb {number|string} bottom margin
+ * @param ml {number|string} left margin
  */
 export interface IMarginProps {
-  m?: number;
-  mx?: number;
-  my?: number;
-  mt?: number;
-  mr?: number;
-  mb?: number;
-  ml?: number;
+  m?: number | string;
+  mx?: number | string;
+  my?: number | string;
+  mt?: number | string;
+  mr?: number | string;
+  mb?: number | string;
+  ml?: number | string;
 }
 
 /**
  * Padding interface for base HTML tag props.
- * @param p {number} padding
- * @param px {number} padding along x-axis
- * @param py {number} padding along y-axis
- * @param pt {number} top padding
- * @param pr {number} right padding
- * @param pb {number} bottom padding
- * @param pl {number} left padding
+ * @param p {number|string} padding
+ * @param px {number|string} padding along x-axis
+ * @param py {number|string} padding along y-axis
+ * @param pt {number|string} top padding
+ * @param pr {number|string} right padding
+ * @param pb {number|string} bottom padding
+ * @param pl {number|string} left padding
  */
 export interface IPaddingProps {
-  p?: number;
-  px?: number;
-  py?: number;
-  pt?: number;
-  pr?: number;
-  pb?: number;
-  pl?: number;
+  p?: number | string;
+  px?: number | string;
+  py?: number | string;
+  pt?: number | string;
+  pr?: number | string;
+  pb?: number | string;
+  pl?: number | string;
 }
 
 /**
@@ -66,6 +66,8 @@ export interface IFlexProps {
   justifyEnd?: boolean;
   justifyCenter?: boolean;
   justifyBaseline?: boolean;
+  justifySpaceAround?: boolean;
+  justifySpaceBetween?: boolean;
 }
 
 /**
