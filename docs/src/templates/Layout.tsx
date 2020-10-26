@@ -59,7 +59,7 @@ const GlobalStyle = createGlobalStyle`
 /**
  * Layout template
  */
-const Layout = ({ data: { mdx } }) => {
+const Layout = ({ location, data: { mdx } }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
@@ -75,7 +75,7 @@ const Layout = ({ data: { mdx } }) => {
               <Logo />
             </LogoContainer>
 
-            <Navigation />
+            <Navigation location={location} />
           </NavigatorCol>
 
           <Col size={3}>

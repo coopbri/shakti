@@ -5,26 +5,36 @@ import styled from "styled-components";
 import Divider from "./Divider";
 import theme from "../constants/theme";
 
-const Navigation = () => {
+const Navigation = ({ location }) => {
   return (
     <NavList>
       <NavEntry>
-        <NavLink to="/">Introduction</NavLink>
+        <NavLink to="/" location={location}>
+          Introduction
+        </NavLink>
       </NavEntry>
       <NavEntry>
-        <NavLink to="/getting-started">Getting Started</NavLink>
+        <NavLink to="/getting-started" location={location}>
+          Getting Started
+        </NavLink>
       </NavEntry>
 
       <Divider my={16} />
 
       <NavEntry>
-        <NavLink to="/base">Base</NavLink>
+        <NavLink to="/base" location={location}>
+          Base
+        </NavLink>
       </NavEntry>
       <NavEntry>
-        <NavLink to="/layout">Layout</NavLink>
+        <NavLink to="/layout" location={location}>
+          Layout
+        </NavLink>
       </NavEntry>
       <NavEntry>
-        <NavLink to="/text">Text</NavLink>
+        <NavLink to="/text" location={location}>
+          Text
+        </NavLink>
       </NavEntry>
 
       <Divider my={16} />
@@ -41,12 +51,12 @@ const NavEntry = styled.li`
   text-align: center;
 `;
 
-const NavLink = styled(Link)`
+const NavLink = styled(Link)<{ location: any }>`
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 600;
 
-  color: ${({ to }) =>
+  color: ${({ to, location }) =>
     to === location.pathname ? theme.colors.orange : theme.colors.text};
 
   &:hover {
