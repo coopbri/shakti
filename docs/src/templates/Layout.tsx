@@ -93,7 +93,12 @@ const Layout = ({ location, data: { mdx } }) => {
     // click handler
     const handleClickOutside = (event) => {
       // verify nav is open and component exists
-      if (navOpen && navRef.current && !navRef.current.contains(event.target)) {
+      if (
+        navOpen &&
+        isSmall &&
+        navRef.current &&
+        !navRef.current.contains(event.target)
+      ) {
         setNavOpen(false);
       }
     };
@@ -149,13 +154,13 @@ const Layout = ({ location, data: { mdx } }) => {
             <Navigation location={location} />
           </NavigatorCol>
 
-          <Col size={3} mx={20}>
+          <ContentCol size={3} mx={20}>
             <h1>{mdx.frontmatter.title}</h1>
 
             <MDXProvider components={shortcodes}>
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </MDXProvider>
-          </Col>
+          </ContentCol>
         </Row>
       </Grid>
     </ThemeProvider>
@@ -191,6 +196,10 @@ const LogoContainer = styled(View)`
   &:hover {
     cursor: pointer;
   }
+`;
+
+const ContentCol = styled(Col)`
+  min-width: 0;
 `;
 
 export default Layout;
