@@ -5,11 +5,12 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     query {
-      allMdx {
+      allMdx(sort: { fields: [frontmatter___index], order: DESC }) {
         edges {
           node {
             id
             frontmatter {
+              title
               path
             }
           }
@@ -20,13 +21,21 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // generate MDX pages
   const pages = result.data.allMdx.edges;
-  pages.forEach(({ node }) => {
+  pages.forEach(({ node }, idx) => {
+    // previous page
+    const previous = idx === pages.length - 1 ? null : pages[idx + 1];
+
+    // next page
+    const next = idx === 0 ? null : pages[idx - 1];
+
     createPage({
-      // slug from frontmatter
+      // title from frontmatter
+      title: node.frontmatter.title,
+      // path from frontmatter
       path: node.frontmatter.path,
       // MDX content wrapper
       component: path.resolve(`./src/templates/Layout.tsx`),
-      context: { id: node.id },
+      context: { id: node.id, previous, next },
     });
   });
 };

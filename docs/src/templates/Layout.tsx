@@ -11,6 +11,7 @@ import {
   Text,
   useWindowQuery,
   breakpoints,
+  Flex,
 } from "shakti";
 import styled, {
   createGlobalStyle,
@@ -24,9 +25,10 @@ import CodeBlock from "../components/CodeBlock";
 import Navigation from "../components/Navigation";
 import theme, { ITheme } from "../constants/theme";
 import MenuButton from "../components/MenuButton";
+import NavCard from "../components/NavCard";
 
 const shortcodes = {
-  link: Link,
+  Link,
   pre: CodeBlock,
 };
 
@@ -52,13 +54,8 @@ const cssReset = css`
     margin: 0;
     padding: 0;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 4px;
+  a {
+    text-decoration: none;
   }
 `;
 
@@ -75,14 +72,30 @@ const GlobalStyle = createGlobalStyle`
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 4px;
+  }
+
+  a {
+    color: ${({ theme }) => theme.colors.red};
+    font-weight: bold;
+  }
 `;
 
 /**
  * Layout template
  */
-const Layout = ({ location, data: { mdx } }) => {
+const Layout = ({ location, data: { mdx }, pageContext }) => {
   // open/closed state of navigation menu
   const [navOpen, setNavOpen] = useState<boolean>(false);
+
+  const { previous, next } = pageContext;
 
   // height of header bar
   const [headerHeight, setHeaderHeight] = useState<number>(null);
@@ -135,7 +148,7 @@ const Layout = ({ location, data: { mdx } }) => {
         <HeaderRow
           ref={headerRef}
           py={isSmall ? 5 : 0}
-          bgColor={theme.colors.text}
+          bgColor={theme.colors.background}
         >
           {isSmall && (
             <Col ml={15}>
@@ -149,7 +162,7 @@ const Layout = ({ location, data: { mdx } }) => {
           <Col alignCenter>
             <HeaderText
               my={isSmall ? 8 : 14}
-              color={theme.colors.background}
+              color={theme.colors.text}
               isSmall={isSmall}
             >
               SHAKTI
@@ -181,13 +194,42 @@ const Layout = ({ location, data: { mdx } }) => {
             <Navigation location={location} />
           </NavigatorCol>
 
-          <ContentCol size={3} mx={20}>
+          <ContentCol size={3} mx={25} mt={15}>
             <h1>{mdx.frontmatter.title}</h1>
 
             <MDXProvider components={shortcodes}>
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </MDXProvider>
           </ContentCol>
+        </Row>
+        <Row my={15} mx={15}>
+          {previous === false ? null : (
+            <Col>
+              {previous && (
+                <NavCard
+                  title="Previous"
+                  path={previous.node.frontmatter.path}
+                  text={previous.node.frontmatter.title}
+                  alignEnd
+                  pr={15}
+                />
+              )}
+            </Col>
+          )}
+
+          {next === false ? null : (
+            <Col>
+              {next && (
+                <NavCard
+                  title="Next"
+                  path={next.node.frontmatter.path}
+                  text={next.node.frontmatter.title}
+                  alignStart
+                  pl={15}
+                />
+              )}
+            </Col>
+          )}
         </Row>
       </Grid>
     </ThemeProvider>
