@@ -156,9 +156,11 @@ const NavigatorCol = styled(Col)<{
   min-width: 200px;
   max-width: 200px;
   background-color: ${({ theme }) => theme.colors.background};
-  height: 100%;
+
+  height: calc(100% - ${({ headerHeight }) => headerHeight}px);
   position: ${({ isSmall }) => (isSmall ? "fixed" : "sticky")};
   top: ${({ headerHeight }) => headerHeight}px;
+  overflow: auto;
 `;
 
 const LogoContainer = styled(View)`
