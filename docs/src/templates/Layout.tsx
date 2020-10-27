@@ -206,7 +206,7 @@ const Layout = ({ location, data: { mdx }, pageContext }) => {
             </MDXProvider>
           </ContentCol>
         </Row>
-        <Row my={15} mx={15}>
+        <Row my={15} mx={15} flexCol={isSmall}>
           {previous === false ? null : (
             <Col>
               {previous && (
@@ -222,7 +222,7 @@ const Layout = ({ location, data: { mdx }, pageContext }) => {
           )}
 
           {next === false ? null : (
-            <Col>
+            <Col mt={isSmall && 10}>
               {next && (
                 <NavCard
                   title="Next"
