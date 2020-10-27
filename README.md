@@ -11,7 +11,7 @@
 - Intuitive grid system based on flexbox
 - Written in TypeScript
 - Tree-shaking support
-- Built on <a href="https://styled-components.com/">styled components</a>, enforcing DRY object composition
+- Built on <a href="https://styled-components.com/">styled components</a>, encouraging DRY object composition
 
 ### Installation
 `yarn add shakti` or `npm i shakti`

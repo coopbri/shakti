@@ -39,18 +39,20 @@ const RightChevron = styled(FaChevronRight)`
 `;
 
 const Card = styled(Flex)`
-  border: 1px solid ${({ theme }) => theme.colors.lightgray};
+  box-shadow: ${({ theme }) => theme.shadows.main};
+  border: 1px solid ${({ theme }) => theme.colors.lightGray};
   border-radius: 8px;
   min-width: 180px;
   justify-content: space-between;
+  text-align: ${({ alignEnd }) => alignEnd && "end"};
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.lightgray};
+    background-color: ${({ theme }) => theme.colors.lightGray};
   }
 `;
 
 const Title = styled(Text)`
-  color: ${({ theme }) => theme.colors.darkgray};
+  color: ${({ theme }) => theme.colors.darkGray};
 `;
 
 const Body = styled(Text)`

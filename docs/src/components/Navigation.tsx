@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
+import { FaGithub as GitHubIcon } from "react-icons/fa";
 
 import Divider from "./Divider";
-import theme from "../constants/theme";
 
 const Navigation = ({ location }) => {
   return (
@@ -38,6 +38,16 @@ const Navigation = ({ location }) => {
       </NavEntry>
 
       <Divider my={16} />
+
+      <NavEntry>
+        <ExternalLink
+          href="https://www.github.com/coopbri/shakti"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GitHubIcon size="1.5rem" />
+        </ExternalLink>
+      </NavEntry>
     </NavList>
   );
 };
@@ -57,15 +67,13 @@ const NavEntry = styled.li`
 
 const NavLink = styled(Link)<{ location: any }>`
   text-transform: uppercase;
-  text-decoration: none;
-  font-weight: 600;
+  color: ${({ to, location, theme }) =>
+    to === location.pathname ? theme.colors.red : theme.colors.text};
+`;
 
-  color: ${({ to, location }) =>
-    to === location.pathname ? theme.colors.orange : theme.colors.text};
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.orange};
-  }
+const ExternalLink = styled.a`
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 export default Navigation;

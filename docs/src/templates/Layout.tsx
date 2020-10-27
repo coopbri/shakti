@@ -87,7 +87,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: bold;
 
     &:hover {
-      color: ${({ theme }) => theme.colors.orange};
+      color: ${({ theme }) => theme.colors.red};
     }
   }
 `;
@@ -244,6 +244,8 @@ const Layout = ({ location, data: { mdx }, pageContext }) => {
 const HeaderRow = styled(Row)`
   position: sticky;
   top: 0;
+  z-index: 1;
+  box-shadow: ${({ theme }) => theme.shadows.main};
 `;
 
 const HeaderText = styled(Text)<{ isSmall?: boolean }>`
@@ -258,7 +260,7 @@ const NavigatorCol = styled(Col)<{
   headerHeight?: number;
 }>`
   display: ${(props) => (props.open ? "block" : "none")};
-  border-right: 1px solid ${({ theme }) => theme.colors.lightgray};
+  border-right: 1.5px solid ${({ theme }) => theme.colors.lightGray};
   min-width: 200px;
   max-width: 200px;
   background-color: ${({ theme }) => theme.colors.background};
@@ -267,11 +269,19 @@ const NavigatorCol = styled(Col)<{
   position: ${({ isSmall }) => (isSmall ? "fixed" : "sticky")};
   top: ${({ headerHeight }) => headerHeight}px;
   overflow: auto;
+
+  border-image-source: ${({ theme }) => `linear-gradient(
+    20deg,
+    ${theme.colors.blue},
+    ${theme.colors.red},
+    ${theme.colors.purple}
+  )`};
+  border-image-slice: 1;
 `;
 
 const LogoContainer = styled(View)`
   min-width: 150px;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.lightgray};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.lightGray};
 
   &:hover {
     cursor: pointer;
