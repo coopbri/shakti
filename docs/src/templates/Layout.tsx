@@ -3,7 +3,15 @@ import { graphql, navigate } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Link } from "gatsby";
-import { Grid, Row, Col, View, useWindowQuery, breakpoints } from "shakti";
+import {
+  Grid,
+  Row,
+  Col,
+  View,
+  Text,
+  useWindowQuery,
+  breakpoints,
+} from "shakti";
 import styled, {
   createGlobalStyle,
   css,
@@ -126,17 +134,28 @@ const Layout = ({ location, data: { mdx } }) => {
       <Grid>
         <HeaderRow
           ref={headerRef}
-          pt={isSmall ? 10 : 30}
-          pb={isSmall ? 5 : 30}
+          py={isSmall ? 5 : 0}
           bgColor={theme.colors.text}
         >
-          <Col hidden showBelow="sm" ml={15}>
-            <MenuButton
-              onClick={() => {
-                setNavOpen(!navOpen);
-              }}
-            />
+          {isSmall && (
+            <Col ml={15}>
+              <MenuButton
+                onClick={() => {
+                  setNavOpen(!navOpen);
+                }}
+              />
+            </Col>
+          )}
+          <Col alignCenter>
+            <HeaderText
+              my={isSmall ? 8 : 14}
+              color={theme.colors.background}
+              isSmall={isSmall}
+            >
+              SHAKTI
+            </HeaderText>
           </Col>
+          {isSmall && <Col></Col>}
         </HeaderRow>
         <Row>
           <NavigatorCol
@@ -178,6 +197,12 @@ const Layout = ({ location, data: { mdx } }) => {
 const HeaderRow = styled(Row)`
   position: sticky;
   top: 0;
+`;
+
+const HeaderText = styled(Text)<{ isSmall?: boolean }>`
+  letter-spacing: 6px;
+  font-size: ${({ isSmall }) => (isSmall ? "18px" : "22px")};
+  font-weight: bold;
 `;
 
 const NavigatorCol = styled(Col)<{
