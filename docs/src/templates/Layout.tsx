@@ -85,6 +85,10 @@ const GlobalStyle = createGlobalStyle`
   a {
     color: ${({ theme }) => theme.colors.red};
     font-weight: bold;
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.orange};
+    }
   }
 `;
 
@@ -253,7 +257,7 @@ const NavigatorCol = styled(Col)<{
   headerHeight?: number;
 }>`
   display: ${(props) => (props.open ? "block" : "none")};
-  border-right: 1px solid ${({ theme }) => theme.colors.accent};
+  border-right: 1px solid ${({ theme }) => theme.colors.lightgray};
   min-width: 200px;
   max-width: 200px;
   background-color: ${({ theme }) => theme.colors.background};
@@ -266,7 +270,7 @@ const NavigatorCol = styled(Col)<{
 
 const LogoContainer = styled(View)`
   min-width: 150px;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.accent};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.lightgray};
 
   &:hover {
     cursor: pointer;

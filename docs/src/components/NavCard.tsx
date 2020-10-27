@@ -18,17 +18,17 @@ const NavCard = (props: any) => {
 };
 
 const Card = styled(Flex)`
-  border: 1px solid ${({ theme }) => theme.colors.accent};
+  border: 1px solid ${({ theme }) => theme.colors.lightgray};
   border-radius: 8px;
   min-width: 180px;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.accent};
+    background-color: ${({ theme }) => theme.colors.lightgray};
   }
 `;
 
 const Title = styled(Text)`
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.darkgray};
 `;
 
 const Body = styled(Text)`
