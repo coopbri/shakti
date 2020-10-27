@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { graphql, navigate } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
@@ -65,19 +65,34 @@ const GlobalStyle = createGlobalStyle`
  * Layout template
  */
 const Layout = ({ location, data: { mdx } }) => {
+  // open/closed state of navigation menu
   const [navOpen, setNavOpen] = useState<boolean>(true);
 
+  // height of header bar
+  const [headerHeight, setHeaderHeight] = useState<number>(null);
+
+  // header ref
+  const headerRef = useRef<HTMLDivElement>();
+
+  // check if viewport is `sm`
   const isSmall = useWindowQuery("WidthBelow", breakpoints.sm);
 
+  // set navOpen state based on viewport width
   useEffect(() => {
     isSmall ? setNavOpen(false) : setNavOpen(true);
+  }, [isSmall]);
+
+  // set header height value
+  useEffect(() => {
+    setHeaderHeight(headerRef.current.clientHeight);
   }, [isSmall]);
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Grid>
-        <Row
+        <HeaderRow
+          ref={headerRef}
           pt={isSmall ? 10 : 30}
           pb={isSmall ? 5 : 30}
           bgColor={theme.colors.text}
@@ -89,9 +104,18 @@ const Layout = ({ location, data: { mdx } }) => {
               }}
             />
           </Col>
-        </Row>
+        </HeaderRow>
         <Row>
-          <NavigatorCol open={navOpen} size={1} alignCenter pr={20}>
+          <NavigatorCol
+            open={navOpen}
+            headerHeight={headerHeight}
+            isSmall={isSmall}
+            size={1}
+            alignCenter
+            pt={10}
+            pl={isSmall ? 10 : 20}
+            pr={isSmall ? 10 : 20}
+          >
             <LogoContainer
               pb={20}
               onClick={() => {
@@ -117,11 +141,24 @@ const Layout = ({ location, data: { mdx } }) => {
   );
 };
 
-const NavigatorCol = styled(Col)<{ open?: boolean }>`
+const HeaderRow = styled(Row)`
+  position: sticky;
+  top: 0;
+`;
+
+const NavigatorCol = styled(Col)<{
+  open?: boolean;
+  isSmall?: boolean;
+  headerHeight?: number;
+}>`
   display: ${(props) => (props.open ? "block" : "none")};
   border-right: 1px solid ${({ theme }) => theme.colors.accent};
   min-width: 200px;
   max-width: 200px;
+  background-color: ${({ theme }) => theme.colors.background};
+  height: 100%;
+  position: ${({ isSmall }) => (isSmall ? "fixed" : "sticky")};
+  top: ${({ headerHeight }) => headerHeight}px;
 `;
 
 const LogoContainer = styled(View)`
