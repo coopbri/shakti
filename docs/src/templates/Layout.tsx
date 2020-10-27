@@ -66,13 +66,14 @@ const GlobalStyle = createGlobalStyle`
  */
 const Layout = ({ location, data: { mdx } }) => {
   // open/closed state of navigation menu
-  const [navOpen, setNavOpen] = useState<boolean>(true);
+  const [navOpen, setNavOpen] = useState<boolean>(false);
 
   // height of header bar
   const [headerHeight, setHeaderHeight] = useState<number>(null);
 
-  // header ref
+  // refs
   const headerRef = useRef<HTMLDivElement>();
+  const navRef = useRef<HTMLDivElement>();
 
   // check if viewport is `sm`
   const isSmall = useWindowQuery("WidthBelow", breakpoints.sm);
@@ -86,6 +87,25 @@ const Layout = ({ location, data: { mdx } }) => {
   useEffect(() => {
     setHeaderHeight(headerRef.current.clientHeight);
   }, [isSmall]);
+
+  // close nav if clicked/pressed outside of it when it is open
+  useEffect(() => {
+    // click handler
+    const handleClickOutside = (event) => {
+      // verify nav is open and component exists
+      if (navOpen && navRef.current && !navRef.current.contains(event.target)) {
+        setNavOpen(false);
+      }
+    };
+
+    // add click event listener
+    document.addEventListener("click", handleClickOutside, false);
+
+    // cleanup: remove click event listener
+    return () => {
+      document.removeEventListener("click", handleClickOutside, false);
+    };
+  }, [navOpen]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -107,6 +127,7 @@ const Layout = ({ location, data: { mdx } }) => {
         </HeaderRow>
         <Row>
           <NavigatorCol
+            ref={navRef}
             open={navOpen}
             headerHeight={headerHeight}
             isSmall={isSmall}
