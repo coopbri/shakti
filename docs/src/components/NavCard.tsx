@@ -10,12 +10,16 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const NavCard = (props: any) => {
   return (
     <Link to={props.path}>
-      <Card mx={10} {...props}>
+      <Card mx={5} {...props}>
         {props.alignEnd && <LeftChevron size="2em" />}
 
         <Flex flexCol>
-          <Title mb={0}>{props.title}</Title>
-          <Body mt={4}>{props.text}</Body>
+          <Title mt={6} mb={0}>
+            {props.title}
+          </Title>
+          <Body mt={4} mb={6}>
+            {props.text}
+          </Body>
         </Flex>
 
         {props.alignStart && <RightChevron size="2em" />}
@@ -50,7 +54,7 @@ const Title = styled(Text)`
 `;
 
 const Body = styled(Text)`
-  font-size: 28px;
+  font-size: 26px;
 `;
 
 export default NavCard;

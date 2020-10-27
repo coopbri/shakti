@@ -174,6 +174,7 @@ const Layout = ({ location, data: { mdx }, pageContext }) => {
           </Col>
           {isSmall && <Col></Col>}
         </HeaderRow>
+
         <Row>
           <NavigatorCol
             ref={navRef}
@@ -198,42 +199,42 @@ const Layout = ({ location, data: { mdx }, pageContext }) => {
             <Navigation location={location} />
           </NavigatorCol>
 
-          <ContentCol size={3} mx={25} mt={15}>
+          <ContentCol size={3} mx={isSmall ? 10 : 25} mt={15}>
             <h1>{mdx.frontmatter.title}</h1>
 
             <MDXProvider components={shortcodes}>
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </MDXProvider>
-          </ContentCol>
-        </Row>
-        <Row my={15} mx={15} flexCol={isSmall}>
-          {previous === false ? null : (
-            <Col>
-              {previous && (
-                <NavCard
-                  title="Previous"
-                  path={previous.node.frontmatter.path}
-                  text={previous.node.frontmatter.title}
-                  alignEnd
-                  pr={15}
-                />
+            <Flex my={15} mx={15} flexCol={isSmall}>
+              {previous === false ? null : (
+                <Col>
+                  {previous && (
+                    <NavCard
+                      title="Previous"
+                      path={previous.node.frontmatter.path}
+                      text={previous.node.frontmatter.title}
+                      alignEnd
+                      pr={15}
+                    />
+                  )}
+                </Col>
               )}
-            </Col>
-          )}
 
-          {next === false ? null : (
-            <Col mt={isSmall && 10}>
-              {next && (
-                <NavCard
-                  title="Next"
-                  path={next.node.frontmatter.path}
-                  text={next.node.frontmatter.title}
-                  alignStart
-                  pl={15}
-                />
+              {next === false ? null : (
+                <Col mt={isSmall && 10}>
+                  {next && (
+                    <NavCard
+                      title="Next"
+                      path={next.node.frontmatter.path}
+                      text={next.node.frontmatter.title}
+                      alignStart
+                      pl={15}
+                    />
+                  )}
+                </Col>
               )}
-            </Col>
-          )}
+            </Flex>
+          </ContentCol>
         </Row>
       </Grid>
     </ThemeProvider>
