@@ -43,6 +43,10 @@ const Navigation = ({ location }) => {
 };
 
 const NavList = styled.ul`
+  /* browser reset */
+  list-style: none;
+  padding-left: 0;
+
   align-items: center;
 `;
 
