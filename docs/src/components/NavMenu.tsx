@@ -3,9 +3,9 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { FaGithub as GitHubIcon } from "react-icons/fa";
 
-import Divider from "./Divider";
+import { Divider } from "./";
 
-const Navigation = ({ location }) => {
+const NavMenu = ({ location }) => {
   return (
     <NavList>
       <NavEntry>
@@ -76,4 +76,4 @@ const ExternalLink = styled.a`
   color: ${({ theme }) => theme.colors.text};
 `;
 
-export default Navigation;
+export default NavMenu;

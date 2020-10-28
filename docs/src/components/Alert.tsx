@@ -13,10 +13,7 @@ const Card = styled(Flex)`
   border-radius: 8px;
   text-align: ${({ alignEnd }) => alignEnd && "end"};
   padding: 0 10px;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.lightGray};
-  }
+  color: ${({ theme }) => theme.colors.background};
 `;
 
 export default Alert;

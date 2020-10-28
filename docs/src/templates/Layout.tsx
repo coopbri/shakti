@@ -13,19 +13,17 @@ import {
   breakpoints,
   Flex,
 } from "shakti";
-import styled, {
-  createGlobalStyle,
-  css,
-  ThemeProps,
-  ThemeProvider,
-} from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 
-import Logo from "../components/Logo";
-import CodeBlock from "../components/CodeBlock";
-import Navigation from "../components/Navigation";
-import theme, { ITheme } from "../constants/theme";
-import MenuButton from "../components/MenuButton";
-import NavCard from "../components/NavCard";
+import {
+  Logo,
+  CodeBlock,
+  GlobalStyle,
+  NavMenu,
+  MenuButton,
+  NavCard,
+} from "../components";
+import { theme } from "../constants";
 
 const shortcodes = {
   Link,
@@ -41,53 +39,6 @@ export const pageQuery = graphql`
         title
         path
       }
-    }
-  }
-`;
-
-/**
- * Reset to clear browser CSS defaults, merged into global styles
- */
-const cssReset = css`
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-  }
-  a {
-    text-decoration: none;
-  }
-`;
-
-/**
- * Global CSS styles
- */
-const GlobalStyle = createGlobalStyle`
-  ${cssReset}
-
-  body {
-    background-color: ${({ theme }: ThemeProps<ITheme>) =>
-      theme.colors.background};
-    color: ${({ theme }: ThemeProps<ITheme>) => theme.colors.text};
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 4px;
-  }
-
-  a {
-    color: ${({ theme }) => theme.colors.red};
-    font-weight: bold;
-
-    &:hover {
-      color: ${({ theme }) => theme.colors.red};
     }
   }
 `;
@@ -176,7 +127,7 @@ const Layout = ({ location, data: { mdx }, pageContext }) => {
         </HeaderRow>
 
         <Row>
-          <NavigatorCol
+          <NavCol
             ref={navRef}
             open={navOpen}
             headerHeight={headerHeight}
@@ -196,8 +147,8 @@ const Layout = ({ location, data: { mdx }, pageContext }) => {
               <Logo />
             </LogoContainer>
 
-            <Navigation location={location} />
-          </NavigatorCol>
+            <NavMenu location={location} />
+          </NavCol>
 
           <ContentCol size={3} mx={isSmall ? 10 : 25} mt={15}>
             <h1>{mdx.frontmatter.title}</h1>
@@ -254,7 +205,7 @@ const HeaderText = styled(Text)<{ isSmall?: boolean }>`
   font-weight: bold;
 `;
 
-const NavigatorCol = styled(Col)<{
+const NavCol = styled(Col)<{
   open?: boolean;
   isSmall?: boolean;
   headerHeight?: number;
