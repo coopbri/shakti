@@ -1,3 +1,6 @@
+// TypeScript type definitions.
+// TypeScript type definitions
+
 /**
  * Display interface for base HTML tag props.
  * @param shown {boolean} show element (display block)
@@ -10,7 +13,7 @@ export interface IDisplayProps {
 
 /**
  * Margin interface for base HTML tag props.
- * @param m {number|string} margin
+ * @param m {number|string} margin (all cardinal directions)
  * @param mx {number|string} margin along x-axis
  * @param my {number|string} margin along y-axis
  * @param mt {number|string} top margin
@@ -30,7 +33,7 @@ export interface IMarginProps {
 
 /**
  * Padding interface for base HTML tag props.
- * @param p {number|string} padding
+ * @param p {number|string} padding (all cardinal directions)
  * @param px {number|string} padding along x-axis
  * @param py {number|string} padding along y-axis
  * @param pt {number|string} top padding

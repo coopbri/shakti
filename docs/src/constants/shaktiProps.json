@@ -1,0 +1,60 @@
+{
+  "display": [
+    {
+      "name": "shown",
+      "type": "boolean",
+      "notes": "show element (display block)"
+    },
+    {
+      "name": "hidden",
+      "type": "boolean",
+      "notes": "hide element (display none)"
+    }
+  ],
+  "margin": [
+    {
+      "name": "m",
+      "type": "number or string",
+      "notes": "margin (all cardinal directions)"
+    },
+    {
+      "name": "mx",
+      "type": "number or string",
+      "notes": "margin along x-axis"
+    },
+    {
+      "name": "my",
+      "type": "number or string",
+      "notes": "margin along y-axis"
+    },
+    { "name": "mt", "type": "number or string", "notes": "top margin" },
+    { "name": "mr", "type": "number or string", "notes": "right margin" },
+    { "name": "mb", "type": "number or string", "notes": "bottom margin" },
+    { "name": "ml", "type": "number or string", "notes": "left margin" }
+  ],
+  "padding": [
+    {
+      "name": "p",
+      "type": "number or string",
+      "notes": "padding (all cardinal directions)"
+    },
+    {
+      "name": "px",
+      "type": "number or string",
+      "notes": "padding along x-axis"
+    },
+    {
+      "name": "py",
+      "type": "number or string",
+      "notes": "padding along y-axis"
+    },
+    { "name": "pt", "type": "number or string", "notes": "top padding" },
+    { "name": "pr", "type": "number or string", "notes": "right padding" },
+    { "name": "pb", "type": "number or string", "notes": "bottom padding" },
+    { "name": "pl", "type": "number or string", "notes": "left padding" }
+  ],
+  "color": [
+    { "name": "color", "type": "string", "notes": "color" },
+    { "name": "bgColor", "type": "string", "notes": "background color" }
+  ]
+}

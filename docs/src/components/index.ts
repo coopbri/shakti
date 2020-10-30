@@ -6,3 +6,4 @@ export { Logo } from "./Logo";
 export { MenuButton } from "./MenuButton";
 export { NavCard } from "./NavCard";
 export { NavMenu } from "./NavMenu";
+export { PropTable } from "./PropTable";

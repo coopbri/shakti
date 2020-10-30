@@ -3,6 +3,7 @@ import { ITheme } from "../lib/types";
 const theme: ITheme = {
   colors: {
     background: "#fffffe",
+    backgroundAccent: "#ebebea",
     lightGray: "#d5d5d5",
     darkGray: "#787878",
     text: "#353839",

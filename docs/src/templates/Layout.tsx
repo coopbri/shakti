@@ -23,15 +23,22 @@ import {
   NavMenu,
   MenuButton,
   NavCard,
+  PropTable,
 } from "../components";
 import { theme } from "../constants";
+import { shaktiProps } from "../constants";
 
+// context for MDX files: these components can be used without importing in MDX
 const shortcodes = {
   Alert,
   Link,
+  PropTable,
   pre: CodeBlock,
 };
 
+/**
+ * MDX documentation page query
+ */
 export const pageQuery = graphql`
   query PageQuery($id: String) {
     mdx(id: { eq: $id }) {
