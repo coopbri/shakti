@@ -1,4 +1,3 @@
-// TypeScript type definitions.
 // TypeScript type definitions
 
 /**
