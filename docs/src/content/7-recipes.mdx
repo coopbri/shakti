@@ -4,6 +4,42 @@ title: Recipes
 path: /recipes
 ---
 
+## Media State
+<code>useWindowQuery</code> can be used to handle responsive layouts with React state. For example, take a grid with one row and two columns:
+
+```tsx
+<Grid>
+    <Row>
+        <Col>🌲</Col>
+        <Col>🍄</Col>
+    </Row>
+</Grid>
+```
+
+We could then query the window width to determine if it is at or below the default small breakpoint:
+
+```tsx
+import { breakpoints } from 'shakti';
+
+const isSmall = useWindowQuery("WidthBelow", breakpoints.sm);
+```
+
+Using this, we could, for example, conditionally render the second (mushroom 🍄) column on relatively small screens, and conditionally set a left/right margin on the grid overall based on the same logic. If the query test is written correctly (i.e. the hook receives correct values), you will simply receive a boolean that is easy to work with.
+
+Putting it all together:
+```tsx
+import { breakpoints } from 'shakti';
+
+const isSmall = useWindowQuery("WidthBelow", breakpoints.sm);
+
+<Grid mx={isSmall ? 10 : 20}>
+    <Row>
+        <Col>🌲</Col>
+        {isSmall && <Col>🍄</Col>}
+    </Row>
+</Grid>
+```
+
 ## Overriding Breakpoints
 The default Shakti breakpoints can be overwritten by creating a higher-order export using object composition with the <DocLink href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax" target="_blank" rel="noopener noreferrer">spread operator</DocLink>. As an example, let's say you wanted to
 
@@ -29,5 +65,3 @@ import shadowedBreakpoints from "/path/to/shadowedBreakpoints";
 const sm = shadowedBreakpoints.sm;
 const xxl = shadowedBreakpoints.xxl;
 ```
-
-## Media State

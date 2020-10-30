@@ -18,3 +18,26 @@ They have values according to the following table:
 The breakpoints can be shadowed (overwritten) if desired. For an example, see <DocLink to="/recipes#overriding-breakpoints">Recipes#Overriding-Breakpoints</DocLink>.
 
 ## <code>useWindowQuery</code> Hook
+Window width and height can be detected using the <code>useWindowQuery</code> hook, which has the following signature:
+
+```ts
+const useWindowQuery = (
+  test: keyof typeof DimensionQuery,
+  breakpoint: number,
+): boolean | undefined => {};
+```
+
+- <code>test</code> accepts an enumerated string constant of the <code>DimensionQuery</code> enum, which can be any string of "WidthAbove", "WidthBelow", "HeightAbove", or "HeightBelow". These enum constants are declarative (the string names represent what they are testing), and the tests are inclusive (they are true if they also equal the breakpoint).
+- <code>breakpoint</code> accepts a pixel value to test against. You could use the Shakti default breakpoints outlined above, or use your own pixel breakpoint here.
+
+It may make more sense in code. For example, if you'd like to check if the window width is less than or equal to the Shakti small (<code>sm</code>) breakpoint, you would have
+
+```ts
+import { breakpoints } from 'shakti';
+
+const smallWidth = useWindowQuery("WidthBelow", breakpoints.sm);
+```
+
+<code>true</code> is returned if the test passes (in this case, if the window width is equal to or below the small breakpoint), and <code>false</code> is returned otherwise. <code>undefined</code> is returned if the test parameters are invalid.
+
+This hook allows you to query the window dimensions and do what you'd like with the information, such as control the state of a React component and adjust the render logic accordingly. For an example of doing this for responsive design, see <DocLink to="/recipes#media-state">Recipes#Media-State</DocLink>.
