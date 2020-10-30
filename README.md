@@ -7,10 +7,11 @@
 <hr>
 
 ### Features
-- Declarative props for HTML and CSS functionality
-- Intuitive grid system based on flexbox
 - Written in TypeScript
 - Tree-shaking support
+- Intuitive grid system based on flexbox
+- Declarative props for HTML and CSS functionality
+- Media utilities to help with responsive layout creation
 - Built on <a href="https://styled-components.com/">styled components</a>, encouraging DRY object composition
 
 ### Installation

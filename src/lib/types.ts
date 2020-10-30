@@ -65,6 +65,8 @@ export interface IPaddingProps {
  * @param justifyEnd {boolean} justify content to flex-end
  * @param justifyCenter {boolean} justify content to center
  * @param justifyBaseline {boolean} justify content to baseline
+ * @param justifySpaceAround {boolean} justify content with space around
+ * @param justifySpaceBetween {boolean} justify content with space between
  */
 export interface IFlexProps {
   flexRow?: boolean;

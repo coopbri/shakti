@@ -62,7 +62,7 @@ const NavMenu = ({ location }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <GitHubIcon size="1.5rem" />
+          <GitHubIcon size="24px" />
         </ExternalLink>
       </NavEntry>
     </NavList>

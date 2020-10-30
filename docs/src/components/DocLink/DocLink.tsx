@@ -4,10 +4,10 @@ import { Link } from "gatsby";
 /**
  * Divider between logical sections in navigation menu
  */
-const Divider = styled(Link)`
+const DocLink = styled(Link)`
   &:hover {
     color: ${({ theme }) => theme.colors.blue};
   }
 `;
 
-export default Divider;
+export default DocLink;

@@ -29,6 +29,10 @@ const cssReset = css`
 const GlobalStyle = createGlobalStyle`
   ${cssReset}
 
+  html {
+    overflow-y: scroll;
+  }
+
   body {
     background-color: ${({ theme }: ThemeProps<ITheme>) =>
       theme.colors.background};

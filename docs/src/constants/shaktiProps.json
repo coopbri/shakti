@@ -151,6 +151,16 @@
       "name": "justifyBaseline",
       "type": "boolean",
       "notes": "justify content to baseline"
+    },
+    {
+      "name": "justifySpaceAround",
+      "type": "boolean",
+      "notes": "justify content with space around"
+    },
+    {
+      "name": "justifySpaceBetween",
+      "type": "boolean",
+      "notes": "justify content with space between"
     }
   ],
   "text": [

@@ -36,7 +36,6 @@ const CodeBlock = ({ children }) => {
             paddingTop: "20px",
             borderRadius: "8px",
             overflowX: "auto",
-            maxWidth: "800px",
           }}
         >
           {/* lex/tokenize code */}

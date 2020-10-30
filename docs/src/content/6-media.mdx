@@ -28,9 +28,9 @@ const useWindowQuery = (
 ```
 
 - <code>test</code> accepts an enumerated string constant of the <code>DimensionQuery</code> enum, which can be any string of "WidthAbove", "WidthBelow", "HeightAbove", or "HeightBelow". These enum constants are declarative (the string names represent what they are testing), and the tests are inclusive (they are true if they also equal the breakpoint).
-- <code>breakpoint</code> accepts a pixel value to test against. You could use the Shakti default breakpoints outlined above, or use your own pixel breakpoint here.
+- <code>breakpoint</code> accepts a pixel value to test against. You could use the Shakti default breakpoints outlined above, or use your own custom breakpoint here.
 
-It may make more sense in code. For example, if you'd like to check if the window width is less than or equal to the Shakti small (<code>sm</code>) breakpoint, you would have
+It may make more sense in code. As a concrete example, if you'd like to check if the window width is less than or equal to the Shakti small (<code>sm</code>) breakpoint, you would have
 
 ```ts
 import { breakpoints } from 'shakti';

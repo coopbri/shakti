@@ -40,8 +40,15 @@ const isSmall = useWindowQuery("WidthBelow", breakpoints.sm);
 </Grid>
 ```
 
+The window query can also be used to control component side effects, for example:
+```tsx
+useEffect(() => {
+    // logic dependent on breakpoint state change here
+}, [isSmall]);
+```
+
 ## Overriding Breakpoints
-The default Shakti breakpoints can be overwritten by creating a higher-order export using object composition with the <DocLink href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax" target="_blank" rel="noopener noreferrer">spread operator</DocLink>. As an example, let's say you wanted to
+The default Shakti breakpoints can be overwritten by creating a higher-order export using object composition with the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax" target="_blank" rel="noopener noreferrer">spread operator</a>. As an example, let's say you wanted to
 
     1. overwrite the value for the *small* breakpoint (<code>sm</code>), and
     2. create a new breakpoint for extra-extra-large screen sizes called <code>xxl</code>:
