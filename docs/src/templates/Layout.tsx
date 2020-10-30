@@ -16,6 +16,7 @@ import {
 import styled, { ThemeProvider } from "styled-components";
 
 import {
+  Alert,
   Logo,
   CodeBlock,
   GlobalStyle,
@@ -26,6 +27,7 @@ import {
 import { theme } from "../constants";
 
 const shortcodes = {
+  Alert,
   Link,
   pre: CodeBlock,
 };
@@ -50,6 +52,7 @@ const Layout = ({ location, data: { mdx }, pageContext }) => {
   // open/closed state of navigation menu
   const [navOpen, setNavOpen] = useState<boolean>(false);
 
+  // previous and next page for navigation buttons
   const { previous, next } = pageContext;
 
   // height of header bar

@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { FaGithub as GitHubIcon } from "react-icons/fa";
 
-import { Divider } from "./";
+import { Divider } from "../";
 
 const NavMenu = ({ location }) => {
   return (

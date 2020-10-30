@@ -1,7 +1,4 @@
-export interface ITheme {
-  colors: { [key: string]: string };
-  shadows: { [key: string]: string };
-}
+import { ITheme } from "../lib/types";
 
 const theme: ITheme = {
   colors: {

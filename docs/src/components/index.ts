@@ -1,8 +1,8 @@
-export { default as Alert } from "./Alert";
-export { default as CodeBlock } from "./CodeBlock";
-export { default as Divider } from "./Divider";
-export { default as GlobalStyle } from "./GlobalStyle";
-export { default as Logo } from "./Logo";
-export { default as MenuButton } from "./MenuButton";
-export { default as NavCard } from "./NavCard";
-export { default as NavMenu } from "./NavMenu";
+export { Alert } from "./Alert";
+export { CodeBlock } from "./CodeBlock";
+export { Divider } from "./Divider";
+export { GlobalStyle } from "./GlobalStyle";
+export { Logo } from "./Logo";
+export { MenuButton } from "./MenuButton";
+export { NavCard } from "./NavCard";
+export { NavMenu } from "./NavMenu";
