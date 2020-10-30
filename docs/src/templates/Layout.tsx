@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { graphql, navigate } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { Link } from "gatsby";
 import {
   Grid,
   Row,
@@ -19,6 +18,7 @@ import {
   Alert,
   Logo,
   CodeBlock,
+  DocLink,
   GlobalStyle,
   NavMenu,
   MenuButton,
@@ -26,12 +26,11 @@ import {
   PropTable,
 } from "../components";
 import { theme } from "../constants";
-import { shaktiProps } from "../constants";
 
 // context for MDX files: these components can be used without importing in MDX
 const shortcodes = {
   Alert,
-  Link,
+  DocLink,
   PropTable,
   pre: CodeBlock,
 };

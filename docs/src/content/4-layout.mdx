@@ -7,17 +7,38 @@ path: /layout
 Shakti contains several components for designing layouts, including a flexbox-based grid system.
 
 ## Grid System
+The grid system is loosely similar to <DocLink href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap</DocLink>'s grid structure:
+
+```tsx
+<Grid>
+    <Row>
+        <Col>🌲</Col>
+        <Col>🍄</Col>
+    </Row>
+
+    <Row>
+        <Col>🍁</Col>
+    </Row>
+</Grid>
+```
+
+All of the grid components (`Grid`, `Row`, and `Col`) have flex enabled by default, and all `Flex` props apply.
 
 ### `Grid`
+Serves as a container component for a layout. Rows (`Row`) are nested within. `Grid` is flex-enabled with column direction by default.
 
 ### `Row`
+Represents a physical row in a layout. Columns (`Col`) are nested within. `Row` is flex-enabled with row direction by default.
 
 ### `Col`
+Represents a physical column in a layout. Nested within a `Row`. `Col` is flex-enabled with column direction by default.
+
 
 ## Other
+Aside from the grid system, there are some other props designed to be used more independently.
 
 ### `View`
-Vanilla `div` with the ability to augment via <Link to="/base">Base</Link> props.
+Vanilla `div` with the ability to augment via <DocLink to="/base">Base</DocLink> props.
 
 ### `Flex`
-Same as `View`, but with `display: flex` enabled by default.
+Same as `View`, but with `display: flex` enabled by default and access to `Flex` props.

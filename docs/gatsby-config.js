@@ -6,7 +6,12 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [`gatsby-remark-autolink-headers`],
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

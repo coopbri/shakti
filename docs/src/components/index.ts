@@ -1,6 +1,7 @@
 export { Alert } from "./Alert";
 export { CodeBlock } from "./CodeBlock";
 export { Divider } from "./Divider";
+export { DocLink } from "./DocLink";
 export { GlobalStyle } from "./GlobalStyle";
 export { Logo } from "./Logo";
 export { MenuButton } from "./MenuButton";

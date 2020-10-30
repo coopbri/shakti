@@ -1,6 +1,7 @@
 import { createGlobalStyle, css, ThemeProps } from "styled-components";
+import "fontsource-noto-sans-jp";
 
-import { ITheme } from "../constants/theme";
+import { ITheme } from "../../lib/types";
 
 /**
  * Reset to clear browser CSS defaults, merged into global styles
@@ -26,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }: ThemeProps<ITheme>) =>
       theme.colors.background};
     color: ${({ theme }: ThemeProps<ITheme>) => theme.colors.text};
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Noto Sans JP", Arial, Helvetica, sans-serif;
     font-size: 18px;
   }
 
@@ -36,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6 {
-    margin: 10px 0;
+    margin: 30px 0 -5px 0;
   }
 
   a {
@@ -46,6 +47,11 @@ const GlobalStyle = createGlobalStyle`
     &:hover {
       color: ${({ theme }) => theme.colors.red};
     }
+  }
+
+  a.anchor {
+    fill: ${({ theme }) => theme.colors.red};
+    margin-right: 8px;
   }
 `;
 
