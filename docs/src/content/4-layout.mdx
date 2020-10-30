@@ -22,23 +22,26 @@ The grid system is loosely similar to <DocLink href="https://getbootstrap.com/" 
 </Grid>
 ```
 
-All of the grid components (`Grid`, `Row`, and `Col`) have flex enabled by default, and all `Flex` props apply.
+All of the grid components (<code>Grid</code>, <code>Row</code>, and <code>Col</code>) have flex enabled by default, and all <DocLink to="/layout#flex"><code>Flex</code></DocLink> props apply.
 
-### `Grid`
-Serves as a container component for a layout. Rows (`Row`) are nested within. `Grid` is flex-enabled with column direction by default.
+### <code>Grid</code>
+Serves as a container component for a layout. Rows (<code>Row</code>) are nested within. <code>Grid</code> is flex-enabled with column direction by default.
 
-### `Row`
-Represents a physical row in a layout. Columns (`Col`) are nested within. `Row` is flex-enabled with row direction by default.
+### <code>Row</code>
+Represents a physical row in a layout. Columns (<code>Col</code>) are nested within. <code>Row</code> is flex-enabled with row direction by default.
 
-### `Col`
-Represents a physical column in a layout. Nested within a `Row`. `Col` is flex-enabled with column direction by default.
+### <code>Col</code>
+Represents a physical column in a layout. Nested within a <code>Row</code>. <code>Col</code> is flex-enabled with column direction by default.
 
+<PropTable propList={shaktiProps.column} />
 
 ## Other
-Aside from the grid system, there are some other props designed to be used more independently.
+Aside from the grid system components, there are some other layout components designed to be used independently.
 
-### `View`
-Vanilla `div` with the ability to augment via <DocLink to="/base">Base</DocLink> props.
+### <code>View</code>
+Vanilla <code>div</code> with the ability to augment via <DocLink to="/base">Base</DocLink> props.
 
-### `Flex`
-Same as `View`, but with `display: flex` enabled by default and access to `Flex` props.
+### <code>Flex</code>
+Same as <code>View</code>, but with flex enabled by default and access to <code>Flex</code> props:
+
+<PropTable propList={shaktiProps.flex} />

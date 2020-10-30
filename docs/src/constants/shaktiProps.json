@@ -1,4 +1,11 @@
 {
+  "breakpoints": [
+    { "name": "xs", "type": "576", "notes": "extra small" },
+    { "name": "sm", "type": "768", "notes": "small" },
+    { "name": "md", "type": "992", "notes": "medium" },
+    { "name": "lg", "type": "1200", "notes": "large" },
+    { "name": "xl", "type": "1400", "notes": "extra large" }
+  ],
   "display": [
     {
       "name": "shown",
@@ -56,5 +63,103 @@
   "color": [
     { "name": "color", "type": "string", "notes": "color" },
     { "name": "bgColor", "type": "string", "notes": "background color" }
+  ],
+  "column": [
+    {
+      "name": "size",
+      "type": "number",
+      "notes": "relative width of column in row (defaults to 1)"
+    },
+    {
+      "name": "showBelow",
+      "type": "string",
+      "notes": "media breakpoint to show column at (shown at breakpoint or smaller)"
+    },
+    {
+      "name": "showAbove",
+      "type": "string",
+      "notes": "media breakpoint to show column at (shown at breakpoint or larger)"
+    },
+    {
+      "name": "hideBelow",
+      "type": "string",
+      "notes": "media breakpoint to hide column at (hidden at breakpoint or smaller)"
+    },
+    {
+      "name": "hideAbove",
+      "type": "string",
+      "notes": "media breakpoint to hide column at (hidden at breakpoint or larger)"
+    }
+  ],
+  "flex": [
+    {
+      "name": "flexRow",
+      "type": "boolean",
+      "notes": "set flex direction to row"
+    },
+    {
+      "name": "flexCol",
+      "type": "boolean",
+      "notes": "set flex direction to column"
+    },
+    {
+      "name": "flexRowReverse",
+      "type": "boolean",
+      "notes": "set flex direction to row-reverse"
+    },
+    {
+      "name": "flexColReverse",
+      "type": "boolean",
+      "notes": "set flex direction to column-reverse"
+    },
+    {
+      "name": "alignStart",
+      "type": "boolean",
+      "notes": "align items to flex-start"
+    },
+    {
+      "name": "alignEnd",
+      "type": "boolean",
+      "notes": "align-items to flex-end"
+    },
+    {
+      "name": "alignCenter",
+      "type": "boolean",
+      "notes": "align items to center"
+    },
+    {
+      "name": "alignBaseline",
+      "type": "boolean",
+      "notes": "align items to baseline"
+    },
+    {
+      "name": "justifyStart",
+      "type": "boolean",
+      "notes": "justify content to flex-start"
+    },
+    {
+      "name": "justifyEnd",
+      "type": "boolean",
+      "notes": "justify content to flex-end"
+    },
+    {
+      "name": "justifyCenter",
+      "type": "boolean",
+      "notes": "justify content to center"
+    },
+    {
+      "name": "justifyBaseline",
+      "type": "boolean",
+      "notes": "justify content to baseline"
+    }
+  ],
+  "text": [
+    { "name": "bold", "type": "boolean", "notes": "bold text" },
+    { "name": "italic", "type": "boolean", "notes": "italic text" },
+    {
+      "name": "fontWeight",
+      "type": "number or string",
+      "notes": "set font weight"
+    }
   ]
 }

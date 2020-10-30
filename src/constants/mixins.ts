@@ -51,7 +51,7 @@ const padding = css<IPaddingProps>`
  */
 const text = css<ITextProps>`
   font-weight: ${({ bold }) => bold && "bold"};
-  font-weight: ${({ fw }) => fw};
+  font-weight: ${({ fontWeight }) => fontWeight};
   font-style: ${({ italic }) => italic && "italic"};
 `;
 

@@ -10,19 +10,30 @@ interface ICategoryProp {
 
 interface IProps {
   propList: [ICategoryProp];
+  colOneTitle?: string;
+  colTwoTitle?: string;
+  colThreeTitle?: string;
 }
 
 /**
  * Prop table for displaying available props for a category.
  * @param propList {object} list of props in category
+ * @param colOneTitle {string} custom column one title
+ * @param colTwoTitle {string} custom column two title
+ * @param colThreeTitle {string} custom column three title
  */
-const PropTable = ({ propList }: IProps) => {
+const PropTable = ({
+  propList,
+  colOneTitle,
+  colTwoTitle,
+  colThreeTitle,
+}: IProps) => {
   return (
     <Table>
       <Header>
-        <th>Prop</th>
-        <th>Type</th>
-        <th>Notes</th>
+        <th>{colOneTitle || "Prop"}</th>
+        <th>{colTwoTitle || "Type"}</th>
+        <th>{colThreeTitle || "Notes"}</th>
       </Header>
 
       {propList.map((prop: any) => (
@@ -47,6 +58,10 @@ const Table = styled.table`
 
   tr:nth-child(even) {
     background-color: ${({ theme }) => theme.colors.backgroundAccent};
+  }
+
+  th {
+    text-transform: uppercase;
   }
 
   th,

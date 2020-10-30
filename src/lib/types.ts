@@ -85,7 +85,7 @@ export interface IFlexProps {
 
 /**
  * Interface for grid column.
- * @param size {number} relative width percentage of row (defaults to 1)
+ * @param size {number} relative width of column in row (defaults to 1)
  * @param showBelow {string} media breakpoint to show column at (shown at breakpoint or smaller)
  * @param showAbove {string} media breakpoint to show column at (shown at breakpoint or larger)
  * @param hideBelow {string} media breakpoint to hide column at (hidden at breakpoint or smaller)
@@ -113,12 +113,12 @@ export interface IColorProps {
  * Interface for core text props.
  * @param bold {boolean} bold
  * @param italic {boolean} italic
- * @param fw {number|string} font-weight
+ * @param fontWeight {number|string} font-weight
  */
 export interface ITextProps {
   bold?: boolean;
   italic?: boolean;
-  fw?: number | string;
+  fontWeight?: number | string;
 }
 
 /**

@@ -1,5 +1,6 @@
 export { Alert } from "./Alert";
 export { CodeBlock } from "./CodeBlock";
+export { CodeFragment } from "./CodeFragment";
 export { Divider } from "./Divider";
 export { DocLink } from "./DocLink";
 export { GlobalStyle } from "./GlobalStyle";

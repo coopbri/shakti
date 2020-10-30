@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { FaGithub as GitHubIcon } from "react-icons/fa";
+import { Text } from "shakti";
 
 import { Divider } from "../";
 
@@ -34,6 +35,22 @@ const NavMenu = ({ location }) => {
       <NavEntry>
         <NavLink to="/text" location={location}>
           Text
+        </NavLink>
+      </NavEntry>
+
+      <Divider my={16} />
+
+      <NavEntry>
+        <NavLink to="/media" location={location}>
+          Media
+        </NavLink>
+      </NavEntry>
+
+      <Divider my={16} />
+
+      <NavEntry>
+        <NavLink to="/recipes" location={location}>
+          Recipes
         </NavLink>
       </NavEntry>
 

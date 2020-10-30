@@ -18,6 +18,7 @@ import {
   Alert,
   Logo,
   CodeBlock,
+  CodeFragment,
   DocLink,
   GlobalStyle,
   NavMenu,
@@ -29,10 +30,13 @@ import { theme } from "../constants";
 
 // context for MDX files: these components can be used without importing in MDX
 const shortcodes = {
+  // component context
   Alert,
   DocLink,
   PropTable,
+  // syntax highlighting
   pre: CodeBlock,
+  code: CodeFragment,
 };
 
 /**
@@ -242,9 +246,12 @@ const NavCol = styled(Col)<{
 const LogoContainer = styled(View)`
   min-width: 150px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightGray};
+  transition: opacity 0.5s ease-out;
 
   &:hover {
     cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.5s ease-out;
   }
 `;
 
