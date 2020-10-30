@@ -20,6 +20,7 @@ import {
   CodeBlock,
   CodeFragment,
   DocLink,
+  ExternalLink,
   GlobalStyle,
   NavMenu,
   MenuButton,
@@ -33,6 +34,7 @@ const shortcodes = {
   // component context
   Alert,
   DocLink,
+  ExternalLink,
   PropTable,
   // syntax highlighting
   pre: CodeBlock,
