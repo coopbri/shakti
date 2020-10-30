@@ -38,6 +38,7 @@ const GlobalStyle = createGlobalStyle`
   h5,
   h6 {
     margin: 30px 0 -5px 0;
+    position: unset !important;
   }
 
   a {
