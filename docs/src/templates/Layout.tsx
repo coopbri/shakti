@@ -74,6 +74,7 @@ const Layout = ({ location, data: { mdx }, pageContext }) => {
 
   // check if viewport is `sm`
   const isSmall = useWindowQuery("WidthBelow", breakpoints.sm);
+  const isExtraLarge = useWindowQuery("WidthAbove", breakpoints.xl);
 
   // set navOpen state based on viewport width
   useEffect(() => {
@@ -199,6 +200,9 @@ const Layout = ({ location, data: { mdx }, pageContext }) => {
               )}
             </Flex>
           </ContentCol>
+
+          {/* add spacing column if viewport is extra large */}
+          {isExtraLarge && <Col></Col>}
         </Row>
       </Grid>
     </ThemeProvider>
