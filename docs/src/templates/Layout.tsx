@@ -75,8 +75,16 @@ const Layout = ({ location, data: { mdx }, pageContext }) => {
   const navRef = useRef<HTMLDivElement>();
 
   // check if viewport is `sm`
-  const isSmall = useWindowQuery("WidthBelow", breakpoints.sm);
-  const isExtraLarge = useWindowQuery("WidthAbove", breakpoints.xl);
+  const isSmall =
+    // verify browser environment
+    typeof window !== "undefined"
+      ? useWindowQuery("WidthBelow", breakpoints.sm)
+      : undefined;
+  const isExtraLarge =
+    // verify browser environment
+    typeof window !== "undefined"
+      ? useWindowQuery("WidthAbove", breakpoints.xl)
+      : undefined;
 
   // set navOpen state based on viewport width
   useEffect(() => {

@@ -24,10 +24,13 @@ const getWindowDimensions = (): WindowDimensions => {
  */
 const useWindowDimensions = (): WindowDimensions => {
   // dimensions state
-  const [dimensions, setDimensions] = useState(getWindowDimensions());
+  const [dimensions, setDimensions] = useState<WindowDimensions>(
+    getWindowDimensions(),
+  );
 
   useEffect(() => {
     // handle window resize
+    // TODO debounce (optimization)
     const handleResize = () => {
       setDimensions(getWindowDimensions());
     };
