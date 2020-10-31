@@ -15,7 +15,7 @@
 - Built on <a href="https://styled-components.com/">styled components</a>, encouraging DRY object composition
 
 ### Installation
-`yarn add shakti` or `npm i shakti`
+`yarn add shakti-lib` or `npm i shakti-lib`
 
 ### Usage
 
