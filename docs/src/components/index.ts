@@ -6,7 +6,6 @@ export { DocLink } from "./DocLink";
 export { ExternalLink } from "./ExternalLink";
 export { GlobalStyle } from "./GlobalStyle";
 export { Logo } from "./Logo";
-export { MenuButton } from "./MenuButton";
 export { NavCard } from "./NavCard";
 export { NavMenu } from "./NavMenu";
 export { PropTable } from "./PropTable";

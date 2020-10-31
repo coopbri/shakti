@@ -13,6 +13,7 @@ import {
   Flex,
 } from "shakti";
 import styled, { ThemeProvider } from "styled-components";
+import { HiOutlineMenu } from "react-icons/hi";
 
 import {
   Alert,
@@ -23,7 +24,6 @@ import {
   ExternalLink,
   GlobalStyle,
   NavMenu,
-  MenuButton,
   NavCard,
   PropTable,
 } from "../components";
@@ -124,9 +124,11 @@ const Layout = ({ location, data: { mdx }, pageContext }) => {
           {isSmall && (
             <Col ml={15}>
               <MenuButton
+                size="2.5em"
                 onClick={() => {
                   setNavOpen(!navOpen);
                 }}
+                open={navOpen}
               />
             </Col>
           )}
@@ -164,6 +166,16 @@ const Layout = ({ location, data: { mdx }, pageContext }) => {
             </LogoContainer>
 
             <NavMenu location={location} />
+
+            <Copyright mt={0} mb={10} size={16}>
+              <CopyrightLink
+                href="https://github.com/coopbri/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                &copy; Brian Cooper
+              </CopyrightLink>
+            </Copyright>
           </NavCol>
 
           <ContentCol size={3} mx={isSmall ? 10 : 25} mt={15}>
@@ -224,6 +236,10 @@ const HeaderText = styled(Text)<{ isSmall?: boolean }>`
   font-weight: bold;
 `;
 
+const MenuButton = styled(HiOutlineMenu)<{ open?: boolean }>`
+  color: ${({ open, theme }) => open && theme.colors.red};
+`;
+
 const NavCol = styled(Col)<{
   open?: boolean;
   isSmall?: boolean;
@@ -247,6 +263,18 @@ const NavCol = styled(Col)<{
     ${theme.colors.purple}
   )`};
   border-image-slice: 1;
+`;
+
+const Copyright = styled(Text)`
+  color: ${({ theme }) => theme.colors.darkGray};
+`;
+
+const CopyrightLink = styled(ExternalLink)`
+  color: ${({ theme }) => theme.colors.darkGray};
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.red};
+  }
 `;
 
 const LogoContainer = styled(View)`

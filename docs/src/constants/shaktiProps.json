@@ -164,12 +164,17 @@
     }
   ],
   "text": [
-    { "name": "bold", "type": "boolean", "notes": "bold text" },
-    { "name": "italic", "type": "boolean", "notes": "italic text" },
     {
-      "name": "fontWeight",
+      "name": "size",
+      "type": "number or string",
+      "notes": "set font size"
+    },
+    {
+      "name": "weight",
       "type": "number or string",
       "notes": "set font weight"
-    }
+    },
+    { "name": "bold", "type": "boolean", "notes": "bold text" },
+    { "name": "italic", "type": "boolean", "notes": "italic text" }
   ]
 }

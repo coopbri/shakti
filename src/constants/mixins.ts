@@ -50,8 +50,9 @@ const padding = css<IPaddingProps>`
  * Text
  */
 const text = css<ITextProps>`
+  font-size: ${({ size }) => checkType(size)};
   font-weight: ${({ bold }) => bold && "bold"};
-  font-weight: ${({ fontWeight }) => fontWeight};
+  font-weight: ${({ weight }) => checkType(weight, false)};
   font-style: ${({ italic }) => italic && "italic"};
 `;
 
