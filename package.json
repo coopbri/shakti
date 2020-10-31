@@ -1,10 +1,9 @@
 {
-  "name": "shakti",
+  "name": "shakti-lib",
   "author": "Brian Cooper",
   "description": "A universal React component toolkit.",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
-  "private": true,
   "main": "build/index.js",
   "module": "build/index.es.js",
   "types": "build/index.d.ts",
