@@ -112,14 +112,16 @@ export interface IColorProps {
 
 /**
  * Interface for core text props.
- * @param bold {boolean} bold
- * @param italic {boolean} italic
- * @param fontWeight {number|string} font-weight
+ * @param size {number|string} font size
+ * @param weight {number|string} font weight
+ * @param bold {boolean} bold text
+ * @param italic {boolean} italic text
  */
 export interface ITextProps {
+  size?: number | string;
+  weight?: number | string;
   bold?: boolean;
   italic?: boolean;
-  fontWeight?: number | string;
 }
 
 /**
