@@ -18,7 +18,7 @@ describe("Text", () => {
 
   test("has access to base props", () => {
     renderComponent();
-    expect(screen.getByText("Test text")).toHaveStyle("margin-left: 4px");
-    expect(screen.getByText("Test text")).toHaveStyle("color: green");
+    expect(screen.getByText("Test text")).toHaveStyle("margin-left: 4px;");
+    expect(screen.getByText("Test text")).toHaveStyle("color: green;");
   });
 });
