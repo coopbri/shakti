@@ -18,8 +18,10 @@
 `yarn add shakti-lib` or `npm i shakti-lib`
 
 ### Usage
+See https://shaktilib.com/getting-started
 
 ### Documentation
+https://shaktilib.com/
 
 ### License
 Shakti is licensed under MIT, &copy; Brian Cooper. See <a href="LICENSE.md">LICENSE.md</a> for more information.
