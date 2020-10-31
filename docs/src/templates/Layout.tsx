@@ -216,7 +216,7 @@ const Layout = ({ location, data: { mdx }, pageContext }) => {
           </ContentCol>
 
           {/* add spacing column if viewport is extra large */}
-          {isExtraLarge && <Col size={2}></Col>}
+          {isExtraLarge && <Col size={1}></Col>}
         </Row>
       </Grid>
     </ThemeProvider>
