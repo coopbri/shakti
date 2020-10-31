@@ -11,7 +11,7 @@ import {
   useWindowQuery,
   breakpoints,
   Flex,
-} from "shakti";
+} from "shakti-lib";
 import styled, { ThemeProvider } from "styled-components";
 import { HiOutlineMenu } from "react-icons/hi";
 

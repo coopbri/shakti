@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Flex, Text } from "shakti";
+import { Flex, Text } from "shakti-lib";
 import styled from "styled-components";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { View } from "shakti";
+import { View } from "shakti-lib";
 
 /**
  * Divider between logical sections in navigation menu

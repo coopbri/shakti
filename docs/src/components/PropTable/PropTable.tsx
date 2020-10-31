@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Flex } from "shakti";
+import { Flex } from "shakti-lib";
 
 interface ICategoryProp {
   name: string;

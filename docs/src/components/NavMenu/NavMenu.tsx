@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { FaGithub as GitHubIcon } from "react-icons/fa";
-import { Text } from "shakti";
+import { Text } from "shakti-lib";
 
 import { Divider } from "../";
 

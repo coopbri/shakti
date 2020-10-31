@@ -1,7 +1,7 @@
 import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import prismTheme from "prism-react-renderer/themes/nightOwl";
-import { View } from "shakti";
+import { View } from "shakti-lib";
 
 /**
  * Code block for rendering from MDX source

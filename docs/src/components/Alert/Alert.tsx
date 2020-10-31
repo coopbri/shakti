@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex } from "shakti";
+import { Flex } from "shakti-lib";
 import styled from "styled-components";
 
 const Alert = ({ children }) => {

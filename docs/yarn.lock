@@ -12892,8 +12892,10 @@ sha.js@^2.4.0, sha.js@^2.4.8:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
-shakti@../:
-  version "0.0.0"
+shakti-lib@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/shakti-lib/-/shakti-lib-0.1.0.tgz#63015a10e50e0787b0c439bb7ab80bafedb9d75e"
+  integrity sha512-8Dox9rJmeqUb8WhydeGPUoBSj/+eRsZz5gr+DTrZkuAe4u8xj6UrTomQhAKqt2EUlIq1oArVglWUqFdY1noeTg==
 
 shallow-compare@^1.2.2:
   version "1.2.2"
