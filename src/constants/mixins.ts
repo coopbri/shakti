@@ -58,6 +58,7 @@ const text = css<ITextProps>`
 /**
  * Color
  */
+/* eslint-disable @typescript-eslint/no-shadow */
 const color = css<IColorProps>`
   color: ${({ color }) => color};
   background-color: ${({ bgColor }) => bgColor};
