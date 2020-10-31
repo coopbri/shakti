@@ -229,7 +229,7 @@ const NavCol = styled(Col)<{
   isSmall?: boolean;
   headerHeight?: number;
 }>`
-  display: ${(props) => (props.open ? "block" : "none")};
+  display: ${(props) => (props.open ? "flex" : "none !important")};
   border-right: 1.5px solid ${({ theme }) => theme.colors.lightGray};
   min-width: 200px;
   max-width: 200px;
