@@ -60,7 +60,9 @@ const Component = () => {
 
 ```tsx render=true
 render(() => {
-    const isSmall = useWindowQuery("WidthBelow", breakpoints.sm);
+    const isSmall = typeof window !== "undefined"
+        ? useWindowQuery("WidthBelow", breakpoints.sm)
+        : undefined;
 
     return(
         <Grid mx={isSmall ? 10 : 20}>
