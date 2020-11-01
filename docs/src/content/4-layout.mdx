@@ -10,7 +10,7 @@ Shakti contains several components for designing layouts, including a flexbox-ba
 The grid system is loosely similar to <ExternalLink href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap</ExternalLink>'s grid structure:
 
 ```tsx
-<Grid>
+<Grid bgColor="#99ffff">
     <Row>
         <Col>🌲</Col>
         <Col>🍄</Col>
@@ -20,6 +20,21 @@ The grid system is loosely similar to <ExternalLink href="https://getbootstrap.c
         <Col>🍁</Col>
     </Row>
 </Grid>
+```
+
+```tsx render=true
+render(() => (
+    <Grid bgColor="#99ffff">
+    <Row>
+        <Col>🌲</Col>
+        <Col>🍄</Col>
+    </Row>
+
+    <Row>
+        <Col>🍁</Col>
+    </Row>
+    </Grid>
+))
 ```
 
 All of the grid components (<code>Grid</code>, <code>Row</code>, and <code>Col</code>) have flex enabled by default, and all <DocLink to="/layout#flex"><code>Flex</code></DocLink> props apply.

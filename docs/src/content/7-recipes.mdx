@@ -18,7 +18,7 @@ path: /recipes
 ```
 
 ```tsx render=true
-render(()=>(
+render(() => (
     <Grid>
         <Row>
             <Col>🌲</Col>
@@ -60,18 +60,18 @@ const Component = () => {
 
 ```tsx render=true
 render(() => {
-        const isSmall = useWindowQuery("WidthBelow", breakpoints.sm);
+    const isSmall = useWindowQuery("WidthBelow", breakpoints.sm);
 
-        return(
-            <Grid mx={isSmall ? 10 : 20}>
-                <Row>
-                    <Col>🌲</Col>
-                    {isSmall && <Col>🍄</Col>}
-                    {!isSmall && <Col>🌻</Col>}
-                </Row>
-            </Grid>
-        )
-    })
+    return(
+        <Grid mx={isSmall ? 10 : 20}>
+            <Row>
+                <Col>🌲</Col>
+                {isSmall && <Col>🍄</Col>}
+                {!isSmall && <Col>🌻</Col>}
+            </Row>
+        </Grid>
+    )
+})
 ```
 
 If you are on a relatively small screen width, you will see the mushroom. On a relatively large screen width, you will see the sunflower!
