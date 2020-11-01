@@ -53,6 +53,11 @@ const NavMenu = ({ location }) => {
           Recipes
         </NavLink>
       </NavEntry>
+      <NavEntry>
+        <NavLink to="/sandbox" location={location}>
+          Sandbox
+        </NavLink>
+      </NavEntry>
 
       <Divider my={16} />
 
