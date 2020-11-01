@@ -5,41 +5,80 @@ path: /recipes
 ---
 
 ## Media State
-<code>useWindowQuery</code> can be used to handle responsive layouts with React state. For example, take a grid with one row and two columns:
+<code>useWindowQuery</code> can be used to handle responsive layouts with React state. For example, take a grid with one row and three columns:
 
 ```tsx
 <Grid>
     <Row>
         <Col>🌲</Col>
         <Col>🍄</Col>
+        <Col>🌻</Col>
     </Row>
 </Grid>
 ```
 
-We could then query the window width to determine if it is at or below the default small breakpoint:
+```tsx render=true
+render(() => (
+    <Grid>
+        <Row>
+            <Col>🌲</Col>
+            <Col>🍄</Col>
+            <Col>🌻</Col>
+        </Row>
+    </Grid>
+))
+```
+
+We could query the window width to determine if it is at or below the default small breakpoint:
 
 ```tsx
-import { breakpoints } from 'shakti';
+import { breakpoints } from 'shakti-lib';
 
 const isSmall = useWindowQuery("WidthBelow", breakpoints.sm);
 ```
 
-Using this, we could, for example, conditionally render the second (mushroom 🍄) column on relatively small screens, and conditionally set a left/right margin on the grid overall based on the same logic. If the query test is written correctly (i.e. the hook receives correct values), you will simply receive a boolean that is easy to work with.
+Using this, we could, for example, conditionally render the second (mushroom 🍄) column on relatively small screens, conditionally render the third (sunflower 🌻) column on relatively large screens, and conditionally set a left/right margin on the grid overall based on the same logic. If the query test is written correctly (i.e. the hook receives correct values), you will simply receive a boolean that is easy to work with.
 
 Putting it all together:
 ```tsx
-import { breakpoints } from 'shakti';
+import { breakpoints } from 'shakti-lib';
 
-const isSmall = useWindowQuery("WidthBelow", breakpoints.sm);
+const Component = () => {
+    const isSmall = useWindowQuery("WidthBelow", breakpoints.sm);
 
-<Grid mx={isSmall ? 10 : 20}>
-    <Row>
-        <Col>🌲</Col>
-        {isSmall && <Col>🍄</Col>}
-    </Row>
-</Grid>
+    return(
+        <Grid mx={isSmall ? 10 : 20}>
+            <Row>
+                <Col>🌲</Col>
+                {isSmall && <Col>🍄</Col>}
+                {!isSmall && <Col>🌻</Col>}
+            </Row>
+        </Grid>
+    );
+};
 ```
 
+```tsx render=true
+render(() => {
+    const isSmall = typeof window !== "undefined"
+        ? useWindowQuery("WidthBelow", breakpoints.sm)
+        : undefined;
+
+    return(
+        <Grid mx={isSmall ? 10 : 20}>
+            <Row>
+                <Col>🌲</Col>
+                {isSmall && <Col>🍄</Col>}
+                {!isSmall && <Col>🌻</Col>}
+            </Row>
+        </Grid>
+    )
+})
+```
+
+If you are on a relatively small screen width, you will see the mushroom. On a relatively large screen width, you will see the sunflower!
+
+### Conditional Side Effects
 The window query can also be used to control component side effects, for example:
 ```tsx
 useEffect(() => {
@@ -56,7 +95,7 @@ The default Shakti breakpoints can be overwritten by creating a higher-order exp
 ```ts
 // 📁 shadowedBreakpoints.ts
 
-import { breakpoints } from 'shakti';
+import { breakpoints } from 'shakti-lib';
 
 const shadowedBreakpoints = {...breakpoints, sm: 700, xxl: 1600}
 

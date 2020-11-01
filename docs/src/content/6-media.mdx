@@ -8,7 +8,7 @@ path: /media
 Shakti comes with default media breakpoints.
 
 ```tsx
-import { breakpoints } from 'shakti';
+import { breakpoints } from 'shakti-lib';
 ```
 
 They have values according to the following table:
@@ -33,7 +33,7 @@ const useWindowQuery = (
 It may make more sense in code. As a concrete example, if you'd like to check if the window width is less than or equal to the Shakti small (<code>sm</code>) breakpoint, you would have
 
 ```ts
-import { breakpoints } from 'shakti';
+import { breakpoints } from 'shakti-lib';
 
 const smallWidth = useWindowQuery("WidthBelow", breakpoints.sm);
 ```
