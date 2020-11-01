@@ -19,7 +19,7 @@ path: /recipes
 We could then query the window width to determine if it is at or below the default small breakpoint:
 
 ```tsx
-import { breakpoints } from 'shakti';
+import { breakpoints } from 'shakti-lib';
 
 const isSmall = useWindowQuery("WidthBelow", breakpoints.sm);
 ```
@@ -28,7 +28,7 @@ Using this, we could, for example, conditionally render the second (mushroom üç
 
 Putting it all together:
 ```tsx
-import { breakpoints } from 'shakti';
+import { breakpoints } from 'shakti-lib';
 
 const isSmall = useWindowQuery("WidthBelow", breakpoints.sm);
 
@@ -56,7 +56,7 @@ The default Shakti breakpoints can be overwritten by creating a higher-order exp
 ```ts
 // üìÅ shadowedBreakpoints.ts
 
-import { breakpoints } from 'shakti';
+import { breakpoints } from 'shakti-lib';
 
 const shadowedBreakpoints = {...breakpoints, sm: 700, xxl: 1600}
 
