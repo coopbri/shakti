@@ -1,0 +1,24 @@
+---
+index: 6
+title: Button
+path: /button
+---
+
+A <code>Button</code> component is an augmented <code>button</code> tag with the ability to mix in <DocLink to="/base">Base</DocLink> and <DocLink to="/text">Text</DocLink> props.
+
+Examples:
+```tsx
+<Button>Regular button!</Button>
+<Button mx={24} bold border="4px solid goldenrod">Bold text button with a custom border!</Button>
+<Button size={24} bgColor="goldenrod" border="none">size 24px text colored button!</Button>
+```
+
+```tsx render=true
+render(() => (
+    <>
+        <Button>Regular button!</Button>
+        <Button m={24} bold border="4px solid goldenrod">Bold text button with a custom border!</Button>
+        <Button size={24} bgColor="goldenrod" border="none">size 24px text colored button!</Button>
+    </>
+))
+```

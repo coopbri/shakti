@@ -4,10 +4,12 @@ import { css } from "styled-components";
 
 import checkType from "../lib/util/checkType";
 import {
+  BorderProps,
   ColorProps,
   DisplayProps,
   MarginProps,
   PaddingProps,
+  TextAlignProps,
   TextProps,
 } from "../lib/types";
 
@@ -18,6 +20,16 @@ import {
 const display = css<DisplayProps>`
   display: ${({ shown }) => shown && "block !important"};
   display: ${({ hidden }) => hidden && "none !important"};
+`;
+
+/**
+ * Text alignment
+ */
+const textAlign = css<TextAlignProps>`
+  text-align: ${({ textLeft }) => textLeft && "left"};
+  text-align: ${({ textCenter }) => textCenter && "center"};
+  text-align: ${({ textRight }) => textRight && "right"};
+  text-align: ${({ textJustify }) => textJustify && "justify"};
 `;
 
 /**
@@ -66,6 +78,21 @@ const color = css<ColorProps>`
 `;
 
 /**
+ * Border
+ */
+const border = css<BorderProps>`
+  border: ${({ border }) => border};
+  border-width: ${({ borderWidth }) => checkType(borderWidth)};
+  border-style: ${({ borderStyle }) => borderStyle};
+  border-color: ${({ borderColor }) => borderColor};
+  border-radius: ${({ borderRadius }) => checkType(borderRadius)};
+  border-top: ${({ borderTop }) => checkType(borderTop)};
+  border-right: ${({ borderRight }) => checkType(borderRight)};
+  border-bottom: ${({ borderBottom }) => checkType(borderBottom)};
+  border-left: ${({ borderLeft }) => checkType(borderLeft)};
+`;
+
+/**
  * Base CSS styles
  */
 export const baseStyles = css`
@@ -73,6 +100,8 @@ export const baseStyles = css`
   ${margin}
   ${padding}
   ${color}
+  ${border}
+  ${textAlign}
 `;
 
 /**

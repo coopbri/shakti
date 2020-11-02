@@ -10,9 +10,11 @@ import {
   View,
   Flex,
   Text,
+  Button,
   breakpoints,
   useWindowQuery,
 } from "shakti-lib";
+import styled from "styled-components";
 
 interface Props {
   children?: any;
@@ -27,6 +29,7 @@ const scope = {
   View,
   Flex,
   Text,
+  Button,
   breakpoints,
   useWindowQuery,
 };
@@ -48,9 +51,9 @@ const CodeBlock = ({ children }: Props) => {
         scope={scope}
         theme={prismTheme}
       >
-        <LiveEditor />
+        <Editor padding={22} />
         <LivePreview />
-        <LiveError />
+        <LiveError style={{ overflowX: "auto", color: "red" }} />
       </LiveProvider>
     );
   }
@@ -91,9 +94,9 @@ const CodeBlock = ({ children }: Props) => {
         <pre
           style={{
             ...style,
-            paddingLeft: "20px",
-            paddingRight: "20px",
-            paddingTop: "20px",
+            paddingLeft: "22px",
+            paddingRight: "22px",
+            paddingTop: "22px",
             borderRadius: "8px",
             overflowX: "auto",
           }}
@@ -111,5 +114,16 @@ const CodeBlock = ({ children }: Props) => {
     </Highlight>
   );
 };
+
+const Editor = styled(LiveEditor)`
+  border-radius: 8px;
+  overflow-x: auto;
+
+  /* unset formatting forced by react-live/react-simple-code-editor */
+  & > textarea,
+  pre {
+    white-space: unset !important;
+  }
+`;
 
 export default CodeBlock;
