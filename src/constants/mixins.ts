@@ -4,6 +4,7 @@ import { css } from "styled-components";
 
 import checkType from "../lib/util/checkType";
 import {
+  BorderProps,
   ColorProps,
   DisplayProps,
   MarginProps,
@@ -77,6 +78,21 @@ const color = css<ColorProps>`
 `;
 
 /**
+ * Border
+ */
+const border = css<BorderProps>`
+  border: ${({ border }) => border};
+  border-width: ${({ borderWidth }) => checkType(borderWidth)};
+  border-style: ${({ borderStyle }) => borderStyle};
+  border-color: ${({ borderColor }) => borderColor};
+  border-radius: ${({ borderRadius }) => checkType(borderRadius)};
+  border-top: ${({ borderTop }) => checkType(borderTop)};
+  border-right: ${({ borderRight }) => checkType(borderRight)};
+  border-bottom: ${({ borderBottom }) => checkType(borderBottom)};
+  border-left: ${({ borderLeft }) => checkType(borderLeft)};
+`;
+
+/**
  * Base CSS styles
  */
 export const baseStyles = css`
@@ -84,6 +100,7 @@ export const baseStyles = css`
   ${margin}
   ${padding}
   ${color}
+  ${border}
   ${textAlign}
 `;
 

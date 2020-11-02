@@ -64,6 +64,37 @@
     { "name": "color", "type": "string", "notes": "color" },
     { "name": "bgColor", "type": "string", "notes": "background color" }
   ],
+  "border": [
+    {
+      "name": "border",
+      "type": "string",
+      "notes": "full border specification"
+    },
+    {
+      "name": "borderWidth",
+      "type": "number or string",
+      "notes": "border width"
+    },
+    { "name": "borderStyle", "type": "string", "notes": "border style" },
+    { "name": "borderColor", "type": "string", "notes": "border color" },
+    {
+      "name": "borderRadius",
+      "type": "number or string",
+      "notes": "border radius"
+    },
+    { "name": "borderTop", "type": "number or string", "notes": "top border" },
+    {
+      "name": "borderRight",
+      "type": "number or string",
+      "notes": "right border"
+    },
+    {
+      "name": "borderBottom",
+      "type": "number or string",
+      "notes": "bottom border"
+    },
+    { "name": "borderLeft", "type": "number or string", "notes": "left border" }
+  ],
   "column": [
     {
       "name": "size",
