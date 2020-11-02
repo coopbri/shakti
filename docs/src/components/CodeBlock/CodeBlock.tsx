@@ -98,7 +98,7 @@ const CodeBlock = ({ children }: Props) => {
             paddingRight: "22px",
             paddingTop: "22px",
             borderRadius: "8px",
-            overflowX: "unset",
+            overflowX: "auto",
           }}
         >
           {/* lex/tokenize code */}
