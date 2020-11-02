@@ -20,3 +20,11 @@ export const BaseP = styled.p<TextBaseProps>`
   ${baseStyles}
   ${textStyles}
 `;
+
+/**
+ * Base `button` tag for composition of higher-order button components.
+ */
+export const BaseButton = styled.button<BaseProps>`
+  ${baseStyles}
+  ${textStyles}
+`;

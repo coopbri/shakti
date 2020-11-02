@@ -1,8 +1,9 @@
 {
   "name": "shakti-lib",
-  "author": "Brian Cooper",
+  "author": "Brian Cooper <brian@brian-cooper.com> (https://brian-cooper.com)",
   "description": "A universal React component toolkit.",
-  "version": "0.1.0",
+  "homepage": "https://shaktilib.com/",
+  "version": "0.2.0",
   "license": "MIT",
   "main": "build/index.js",
   "module": "build/index.es.js",
@@ -14,6 +15,13 @@
     "type": "git",
     "url": "https://github.com/coopbri/shakti.git"
   },
+  "keywords": [
+    "react",
+    "library",
+    "component",
+    "toolkit",
+    "typescript"
+  ],
   "scripts": {
     "build": "rollup -c rollup.config.ts",
     "dev": "rollup -c rollup.config.ts -w",

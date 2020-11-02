@@ -207,5 +207,15 @@
     },
     { "name": "bold", "type": "boolean", "notes": "bold text" },
     { "name": "italic", "type": "boolean", "notes": "italic text" }
+  ],
+  "textAlign": [
+    { "name": "textLeft", "type": "boolean", "notes": "align text to left" },
+    {
+      "name": "textCenter",
+      "type": "boolean",
+      "notes": "align text to center"
+    },
+    { "name": "textRight", "type": "boolean", "notes": "align text to right" },
+    { "name": "textJustify", "type": "boolean", "notes": "justify text" }
   ]
 }

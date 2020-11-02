@@ -1,5 +1,5 @@
 ---
-index: 7
+index: 8
 title: Recipes
 path: /recipes
 ---
@@ -8,7 +8,7 @@ path: /recipes
 <code>useWindowQuery</code> can be used to handle responsive layouts with React state. For example, take a grid with one row and three columns:
 
 ```tsx
-<Grid>
+<Grid bgColor="#feccfe" borderRadius={8} textCenter>
     <Row>
         <Col>🌲</Col>
         <Col>🍄</Col>
@@ -19,7 +19,7 @@ path: /recipes
 
 ```tsx render=true
 render(() => (
-    <Grid>
+    <Grid bgColor="#feccfe" borderRadius={8} textCenter>
         <Row>
             <Col>🌲</Col>
             <Col>🍄</Col>
@@ -47,7 +47,7 @@ const Component = () => {
     const isSmall = useWindowQuery("WidthBelow", breakpoints.sm);
 
     return(
-        <Grid mx={isSmall ? 10 : 20}>
+        <Grid mx={isSmall ? 10 : 20} bgColor="#feccfe" borderRadius={8} textCenter>
             <Row>
                 <Col>🌲</Col>
                 {isSmall && <Col>🍄</Col>}
@@ -65,7 +65,7 @@ render(() => {
         : undefined;
 
     return(
-        <Grid mx={isSmall ? 10 : 20}>
+        <Grid mx={isSmall ? 10 : 20} bgColor="#feccfe" borderRadius={8} textCenter>
             <Row>
                 <Col>🌲</Col>
                 {isSmall && <Col>🍄</Col>}
