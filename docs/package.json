@@ -2,7 +2,7 @@
   "name": "shakti-docs",
   "author": "Brian Cooper <brian@brian-cooper.com> (https://brian-cooper.com)",
   "description": "A universal React component toolkit",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "private": true,
   "scripts": {
