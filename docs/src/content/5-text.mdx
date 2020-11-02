@@ -7,3 +7,21 @@ path: /text
 A <code>Text</code> component is an augmented <code>p</code> tag with the ability to mix in <DocLink to="/base">Base</DocLink> props as well as the below text props:
 
 <PropTable propList={shaktiProps.text} />
+
+Examples:
+
+```tsx
+<Text textCenter>Regular text!</Text>
+<Text textCenter bold>Bold text!</Text>
+<Text textCenter size={24} border="4px solid deeppink">size 24px text with a border!</Text>
+```
+
+```tsx render=true
+render(() => (
+    <>
+        <Text textCenter>Regular text!</Text>
+        <Text textCenter bold>Bold text!</Text>
+        <Text textCenter size={24} border="4px solid deeppink">size 24px text with a border!</Text>
+    </>
+))
+```

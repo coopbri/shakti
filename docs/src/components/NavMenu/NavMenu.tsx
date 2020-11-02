@@ -37,6 +37,11 @@ const NavMenu = ({ location }) => {
           Text
         </NavLink>
       </NavEntry>
+      <NavEntry>
+        <NavLink to="/button" location={location}>
+          Button
+        </NavLink>
+      </NavEntry>
 
       <Divider my={16} />
 

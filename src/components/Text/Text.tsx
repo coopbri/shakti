@@ -1,4 +1,4 @@
-// Text components (exported to public API).
+// Text component (exported to public API).
 
 import styled from "styled-components";
 

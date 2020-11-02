@@ -10,6 +10,7 @@ import {
   View,
   Flex,
   Text,
+  Button,
   breakpoints,
   useWindowQuery,
 } from "shakti-lib";
@@ -28,6 +29,7 @@ const scope = {
   View,
   Flex,
   Text,
+  Button,
   breakpoints,
   useWindowQuery,
 };
@@ -50,7 +52,6 @@ const CodeBlock = ({ children }: Props) => {
         theme={prismTheme}
       >
         <Editor padding={22} />
-
         <LivePreview />
         <LiveError style={{ overflowX: "auto", color: "red" }} />
       </LiveProvider>
