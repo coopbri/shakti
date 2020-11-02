@@ -4,19 +4,19 @@
 import styled from "styled-components";
 
 import { baseStyles, textStyles } from "../../constants";
-import { IBaseProps, ITextBaseProps } from "../../lib/types";
+import { BaseProps, TextBaseProps } from "../../lib/types";
 
 /**
  * Base `div` tag for composition of higher-order layout components.
  */
-export const BaseDiv = styled.div<IBaseProps>`
+export const BaseDiv = styled.div<BaseProps>`
   ${baseStyles}
 `;
 
 /**
  * Base `p` tag for composition of higher-order text components.
  */
-export const BaseP = styled.p<ITextBaseProps>`
+export const BaseP = styled.p<TextBaseProps>`
   ${baseStyles}
   ${textStyles}
 `;

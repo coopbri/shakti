@@ -3,7 +3,7 @@
 /**
  * Theme interface
  */
-export interface ITheme {
+export interface Theme {
   colors: { [key: string]: string };
   shadows: { [key: string]: string };
 }

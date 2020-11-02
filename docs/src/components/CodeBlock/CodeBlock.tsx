@@ -14,7 +14,7 @@ import {
   useWindowQuery,
 } from "shakti-lib";
 
-interface IProps {
+interface Props {
   children?: any;
 }
 
@@ -35,7 +35,7 @@ const scope = {
  * Code block for rendering from MDX source
  * @param children code to be lexed
  */
-const CodeBlock = ({ children }: IProps) => {
+const CodeBlock = ({ children }: Props) => {
   const className = children.props.className || "";
   const matches = className.match(/language-(?<lang>.*)/);
 

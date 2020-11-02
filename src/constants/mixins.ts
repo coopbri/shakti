@@ -4,18 +4,18 @@ import { css } from "styled-components";
 
 import checkType from "../lib/util/checkType";
 import {
-  IColorProps,
-  IDisplayProps,
-  IMarginProps,
-  IPaddingProps,
-  ITextProps,
+  ColorProps,
+  DisplayProps,
+  MarginProps,
+  PaddingProps,
+  TextProps,
 } from "../lib/types";
 
 /**
  * Display
  * important is set to force override existing default (e.g. display: flex)
  */
-const display = css<IDisplayProps>`
+const display = css<DisplayProps>`
   display: ${({ shown }) => shown && "block !important"};
   display: ${({ hidden }) => hidden && "none !important"};
 `;
@@ -23,7 +23,7 @@ const display = css<IDisplayProps>`
 /**
  * Margin (pixels)
  */
-const margin = css<IMarginProps>`
+const margin = css<MarginProps>`
   margin: ${({ m }) => checkType(m)};
   margin: 0 ${({ mx }) => (mx ? checkType(mx) : "px")};
   margin: ${({ my }) => (my ? checkType(my) : "px")} 0;
@@ -36,7 +36,7 @@ const margin = css<IMarginProps>`
 /**
  * Padding (pixels)
  */
-const padding = css<IPaddingProps>`
+const padding = css<PaddingProps>`
   padding: ${({ p }) => checkType(p)};
   padding: 0 ${({ px }) => (px ? checkType(px) : "px")};
   padding: ${({ py }) => (py ? checkType(py) : "py")} 0;
@@ -49,7 +49,7 @@ const padding = css<IPaddingProps>`
 /**
  * Text
  */
-const text = css<ITextProps>`
+const text = css<TextProps>`
   font-size: ${({ size }) => checkType(size)};
   font-weight: ${({ bold }) => bold && "bold"};
   font-weight: ${({ weight }) => checkType(weight, false)};
@@ -60,7 +60,7 @@ const text = css<ITextProps>`
  * Color
  */
 /* eslint-disable @typescript-eslint/no-shadow */
-const color = css<IColorProps>`
+const color = css<ColorProps>`
   color: ${({ color }) => color};
   background-color: ${({ bgColor }) => bgColor};
 `;

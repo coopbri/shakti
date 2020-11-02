@@ -1,7 +1,7 @@
 import { createGlobalStyle, css, ThemeProps } from "styled-components";
 import "fontsource-noto-sans-jp";
 
-import { ITheme } from "../../lib/types";
+import { Theme } from "../../lib/types";
 
 /**
  * Reset to clear browser CSS defaults, merged into global styles
@@ -34,9 +34,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${({ theme }: ThemeProps<ITheme>) =>
+    background-color: ${({ theme }: ThemeProps<Theme>) =>
       theme.colors.background};
-    color: ${({ theme }: ThemeProps<ITheme>) => theme.colors.text};
+    color: ${({ theme }: ThemeProps<Theme>) => theme.colors.text};
     font-family: "Noto Sans JP", Arial, Helvetica, sans-serif;
     font-size: 18px;
   }

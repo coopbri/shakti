@@ -2,14 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { Flex } from "shakti-lib";
 
-interface ICategoryProp {
+interface CategoryProp {
   name: string;
   type: string;
   notes: string;
 }
 
-interface IProps {
-  propList: [ICategoryProp];
+interface Props {
+  propList: [CategoryProp];
   colOneTitle?: string;
   colTwoTitle?: string;
   colThreeTitle?: string;
@@ -27,7 +27,7 @@ const PropTable = ({
   colOneTitle,
   colTwoTitle,
   colThreeTitle,
-}: IProps) => {
+}: Props) => {
   return (
     <Table>
       <Header>

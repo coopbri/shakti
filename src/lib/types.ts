@@ -5,7 +5,7 @@
  * @param shown {boolean} show element (display block)
  * @param hidden {boolean} hide element (display none)
  */
-export interface IDisplayProps {
+export interface DisplayProps {
   shown?: boolean;
   hidden?: boolean;
 }
@@ -20,7 +20,7 @@ export interface IDisplayProps {
  * @param mb {number|string} bottom margin
  * @param ml {number|string} left margin
  */
-export interface IMarginProps {
+export interface MarginProps {
   m?: number | string;
   mx?: number | string;
   my?: number | string;
@@ -40,7 +40,7 @@ export interface IMarginProps {
  * @param pb {number|string} bottom padding
  * @param pl {number|string} left padding
  */
-export interface IPaddingProps {
+export interface PaddingProps {
   p?: number | string;
   px?: number | string;
   py?: number | string;
@@ -67,7 +67,7 @@ export interface IPaddingProps {
  * @param justifySpaceAround {boolean} justify content with space around
  * @param justifySpaceBetween {boolean} justify content with space between
  */
-export interface IFlexProps {
+export interface FlexProps {
   flexRow?: boolean;
   flexCol?: boolean;
   flexRowReverse?: boolean;
@@ -92,7 +92,7 @@ export interface IFlexProps {
  * @param hideBelow {string} media breakpoint to hide column at (hidden at breakpoint or smaller)
  * @param hideAbove {string} media breakpoint to hide column at (hidden at breakpoint or larger)
  */
-export interface IColProps {
+export interface ColProps {
   size?: number;
   showBelow?: string;
   showAbove?: string;
@@ -105,7 +105,7 @@ export interface IColProps {
  * @param color {string} color
  * @param bgColor {string} background color
  */
-export interface IColorProps {
+export interface ColorProps {
   color?: string;
   bgColor?: string;
 }
@@ -117,7 +117,7 @@ export interface IColorProps {
  * @param bold {boolean} bold text
  * @param italic {boolean} italic text
  */
-export interface ITextProps {
+export interface TextProps {
   size?: number | string;
   weight?: number | string;
   bold?: boolean;
@@ -127,13 +127,13 @@ export interface ITextProps {
 /**
  * Base interface for HTML tag props. Composes elementary prop interfaces, such as margin.
  */
-export interface IBaseProps
-  extends IDisplayProps,
-    IMarginProps,
-    IPaddingProps,
-    IColorProps {}
+export interface BaseProps
+  extends DisplayProps,
+    MarginProps,
+    PaddingProps,
+    ColorProps {}
 
 /**
  * Base interface for HTML tag props that use text decoration, such as `p` tags.
  */
-export interface ITextBaseProps extends IBaseProps, ITextProps {}
+export interface TextBaseProps extends BaseProps, TextProps {}

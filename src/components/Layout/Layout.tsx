@@ -3,7 +3,7 @@
 import styled from "styled-components";
 
 import { breakpoints } from "../../constants";
-import { IColProps, IFlexProps } from "../../lib/types";
+import { ColProps, FlexProps } from "../../lib/types";
 import { BaseDiv } from "../Base/Base";
 
 /**
@@ -66,7 +66,7 @@ export const View = styled(BaseDiv)``;
 /**
  * Augmented, flexbox-enabled div with base styles mixed in.
  */
-export const Flex = styled(BaseDiv)<IFlexProps>`
+export const Flex = styled(BaseDiv)<FlexProps>`
   display: flex;
   flex-direction: ${({ flexRow }) => flexRow && "row"};
   flex-direction: ${({ flexCol }) => flexCol && "column"};
@@ -103,7 +103,7 @@ export const Row = styled(Flex)``;
  * Column component, nested in a row. Flex length is set to 1 unless a length
  * is specified via the `size` prop.
  */
-export const Col = styled(Flex)<IColProps>`
+export const Col = styled(Flex)<ColProps>`
   flex-direction: column;
   flex: ${({ size }) => size || 1};
 
