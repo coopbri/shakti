@@ -51,6 +51,20 @@ export interface PaddingProps {
 }
 
 /**
+ * Interface for text alignment.
+ * @param textLeft {boolean} align text to left
+ * @param textCenter {boolean} align text to center
+ * @param textRight {boolean} align text to right
+ * @param textJustify {boolean} justify text
+ */
+export interface TextAlignProps {
+  textLeft?: boolean;
+  textCenter?: boolean;
+  textRight?: boolean;
+  textJustify?: boolean;
+}
+
+/**
  * Interface for flex-enabled `div`.
  * @param flexRow {boolean} set flex direction to row
  * @param flexCol {boolean} set flex direction to column
@@ -111,6 +125,30 @@ export interface ColorProps {
 }
 
 /**
+ * Interface for border props.
+ * @param border {string} full border specification
+ * @param borderWidth {number|string} border width
+ * @param borderStyle {string} border style
+ * @param borderColor {string} border color
+ * @param borderRadius {number|string} border radius
+ * @param borderTop {number|string} top border
+ * @param borderRight {number|string} right border
+ * @param borderBottom {number|string} bottom border
+ * @param borderLeft {number|string} left border
+ */
+export interface BorderProps {
+  border?: string;
+  borderWidth?: number | string;
+  borderStyle?: string;
+  borderColor?: string;
+  borderRadius?: number | string;
+  borderTop?: number | string;
+  borderRight?: number | string;
+  borderBottom?: number | string;
+  borderLeft?: number | string;
+}
+
+/**
  * Interface for core text props.
  * @param size {number|string} font size
  * @param weight {number|string} font weight
@@ -131,7 +169,9 @@ export interface BaseProps
   extends DisplayProps,
     MarginProps,
     PaddingProps,
-    ColorProps {}
+    TextAlignProps,
+    ColorProps,
+    BorderProps {}
 
 /**
  * Base interface for HTML tag props that use text decoration, such as `p` tags.
