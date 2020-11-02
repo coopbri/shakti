@@ -234,7 +234,7 @@ const Layout = ({ location, data: { mdx }, pageContext }) => {
 const HeaderRow = styled(Row)`
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   box-shadow: ${({ theme }) => theme.shadows.main};
 `;
 
@@ -253,6 +253,7 @@ const NavCol = styled(Col)<{
   isSmall?: boolean;
   headerHeight?: number;
 }>`
+  z-index: 1;
   display: ${(props) => (props.open ? "flex" : "none !important")};
   border-right: 1.5px solid ${({ theme }) => theme.colors.lightGray};
   min-width: 200px;

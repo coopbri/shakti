@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Flex } from "shakti-lib";
 
 interface CategoryProp {
   name: string;
@@ -29,23 +28,30 @@ const PropTable = ({
   colThreeTitle,
 }: Props) => {
   return (
-    <Table>
-      <Header>
-        <th>{colOneTitle || "Prop"}</th>
-        <th>{colTwoTitle || "Type"}</th>
-        <th>{colThreeTitle || "Notes"}</th>
-      </Header>
+    <Container>
+      <Table>
+        <Header>
+          <th>{colOneTitle || "Prop"}</th>
+          <th>{colTwoTitle || "Type"}</th>
+          <th>{colThreeTitle || "Notes"}</th>
+        </Header>
 
-      {propList.map((prop: any) => (
-        <tr>
-          <td>{prop.name}</td>
-          <td>{prop.type}</td>
-          <td>{prop.notes}</td>
-        </tr>
-      ))}
-    </Table>
+        {propList.map((prop: any) => (
+          <tr>
+            <td>{prop.name}</td>
+            <td>{prop.type}</td>
+            <td>{prop.notes}</td>
+          </tr>
+        ))}
+      </Table>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  overflow-x: auto;
+  overflow-y: hidden;
+`;
 
 const Table = styled.table`
   background-color: ${({ theme }) => theme.colors.lightGray};
