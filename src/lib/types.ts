@@ -51,6 +51,20 @@ export interface PaddingProps {
 }
 
 /**
+ * Interface for text alignment.
+ * @param textLeft {boolean} align text to left
+ * @param textCenter {boolean} align text to center
+ * @param textRight {boolean} align text to right
+ * @param textJustify {boolean} justify text
+ */
+export interface TextAlignProps {
+  textLeft?: boolean;
+  textCenter?: boolean;
+  textRight?: boolean;
+  textJustify?: boolean;
+}
+
+/**
  * Interface for flex-enabled `div`.
  * @param flexRow {boolean} set flex direction to row
  * @param flexCol {boolean} set flex direction to column

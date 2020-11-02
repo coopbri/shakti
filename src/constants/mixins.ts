@@ -8,6 +8,7 @@ import {
   DisplayProps,
   MarginProps,
   PaddingProps,
+  TextAlignProps,
   TextProps,
 } from "../lib/types";
 
@@ -18,6 +19,16 @@ import {
 const display = css<DisplayProps>`
   display: ${({ shown }) => shown && "block !important"};
   display: ${({ hidden }) => hidden && "none !important"};
+`;
+
+/**
+ * Text alignment
+ */
+const textAlign = css<TextAlignProps>`
+  text-align: ${({ textLeft }) => textLeft && "left"};
+  text-align: ${({ textCenter }) => textCenter && "center"};
+  text-align: ${({ textRight }) => textRight && "right"};
+  text-align: ${({ textJustify }) => textJustify && "justify"};
 `;
 
 /**
@@ -73,6 +84,7 @@ export const baseStyles = css`
   ${margin}
   ${padding}
   ${color}
+  ${textAlign}
 `;
 
 /**
