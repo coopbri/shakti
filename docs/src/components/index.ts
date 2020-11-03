@@ -1,4 +1,5 @@
 export { Alert } from "./Alert";
+export { Card } from "./Card";
 export { CodeBlock } from "./CodeBlock";
 export { CodeFragment } from "./CodeFragment";
 export { Divider } from "./Divider";
@@ -9,3 +10,4 @@ export { Logo } from "./Logo";
 export { NavCard } from "./NavCard";
 export { NavMenu } from "./NavMenu";
 export { PropTable } from "./PropTable";
+export { Remark } from "./Remark";
