@@ -4,7 +4,7 @@ title: Base
 path: /base
 ---
 
-import {shaktiProps} from "../constants"
+import { shaktiProps } from "../constants";
 
 Shakti comes with base augmentation props that can be applied to all components in the library. The props include basic functionality, such as margin, padding, and coloring. They are designed to facilitate rapid prototyping and development.
 
@@ -13,6 +13,10 @@ Control the displayed state of an element.
 
 <PropTable propList={shaktiProps.display} />
 
+### Dimension
+Set the dimensions (width and height) of an element. Pixels are used as the unit if a number is specified. If a string is specified, it is assumed that a unit (e.g. <code>vh</code>) is passed in.
+
+<PropTable propList={shaktiProps.dimension} />
 
 ### Margin
 Modify the margin of an element. Pixels are used as the unit if a number is specified. If a string is specified, it is assumed that a unit (e.g. <code>em</code>) is passed in.

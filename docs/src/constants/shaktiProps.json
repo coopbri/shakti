@@ -18,6 +18,38 @@
       "notes": "hide element (display none)"
     }
   ],
+  "dimension": [
+    {
+      "name": "minWidth",
+      "type": "number or string",
+      "notes": "minimum width"
+    },
+    {
+      "name": "width",
+      "type": "number or string",
+      "notes": "width"
+    },
+    {
+      "name": "maxWidth",
+      "type": "number or string",
+      "notes": "maximum width"
+    },
+    {
+      "name": "minHeight",
+      "type": "number or string",
+      "notes": "minimum height"
+    },
+    {
+      "name": "height",
+      "type": "number or string",
+      "notes": "height"
+    },
+    {
+      "name": "maxHeight",
+      "type": "number or string",
+      "notes": "maximum height"
+    }
+  ],
   "margin": [
     {
       "name": "m",

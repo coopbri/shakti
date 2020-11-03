@@ -1,9 +1,13 @@
 import React from "react";
-import { Flex } from "shakti-lib";
+import { Flex, Text } from "shakti-lib";
 import styled from "styled-components";
 
 const Alert = ({ children }) => {
-  return <Card>{children}</Card>;
+  return (
+    <Card>
+      <Text>{children} </Text>
+    </Card>
+  );
 };
 
 const Card = styled(Flex)`

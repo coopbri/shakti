@@ -6,6 +6,7 @@ import checkType from "../lib/util/checkType";
 import {
   BorderProps,
   ColorProps,
+  DimensionProps,
   DisplayProps,
   MarginProps,
   PaddingProps,
@@ -20,6 +21,18 @@ import {
 const display = css<DisplayProps>`
   display: ${({ shown }) => shown && "block !important"};
   display: ${({ hidden }) => hidden && "none !important"};
+`;
+
+/**
+ * Dimension
+ */
+const dimension = css<DimensionProps>`
+  min-width: ${({ minWidth }) => checkType(minWidth)};
+  width: ${({ width }) => checkType(width)};
+  max-width: ${({ maxWidth }) => checkType(maxWidth)};
+  min-height: ${({ minHeight }) => checkType(minHeight)};
+  height: ${({ height }) => checkType(height)};
+  max-height: ${({ maxHeight }) => checkType(maxHeight)};
 `;
 
 /**
@@ -97,6 +110,7 @@ const border = css<BorderProps>`
  */
 export const baseStyles = css`
   ${display}
+  ${dimension}
   ${margin}
   ${padding}
   ${color}

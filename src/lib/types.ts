@@ -11,6 +11,24 @@ export interface DisplayProps {
 }
 
 /**
+ * Dimension interface for width and height.
+ * @param minWidth {number|string} minimum width
+ * @param width {number|string} width
+ * @param maxWidth {number|string} maximum width
+ * @param minHeight {number|string} minimum height
+ * @param height {number|string} height
+ * @param maxHeight {number|string} maximum height
+ */
+export interface DimensionProps {
+  minWidth?: number | string;
+  width?: number | string;
+  maxWidth?: number | string;
+  minHeight?: number | string;
+  height?: number | string;
+  maxHeight?: number | string;
+}
+
+/**
  * Margin interface for base HTML tag props.
  * @param m {number|string} margin (all cardinal directions)
  * @param mx {number|string} margin along x-axis
