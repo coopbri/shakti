@@ -30,6 +30,13 @@ export interface DimensionProps {
 
 /**
  * Margin interface for base HTML tag props.
+ * @param margin {number|string} margin (all cardinal directions)
+ * @param marginX {number|string} margin along x-axis
+ * @param marginY {number|string} margin along y-axis
+ * @param marginTop {number|string} top margin
+ * @param marginRight {number|string} right margin
+ * @param marginBottom {number|string} bottom margin
+ * @param marginLeft {number|string} left margin
  * @param m {number|string} margin (all cardinal directions)
  * @param mx {number|string} margin along x-axis
  * @param my {number|string} margin along y-axis
@@ -39,6 +46,13 @@ export interface DimensionProps {
  * @param ml {number|string} left margin
  */
 export interface MarginProps {
+  margin?: number | string;
+  marginX?: number | string;
+  marginY?: number | string;
+  marginTop?: number | string;
+  marginRight?: number | string;
+  marginBottom?: number | string;
+  marginLeft?: number | string;
   m?: number | string;
   mx?: number | string;
   my?: number | string;
@@ -50,6 +64,13 @@ export interface MarginProps {
 
 /**
  * Padding interface for base HTML tag props.
+ * @param padding {number|string} padding (all cardinal directions)
+ * @param paddingX {number|string} padding along x-axis
+ * @param paddingY {number|string} padding along y-axis
+ * @param paddingTop {number|string} top padding
+ * @param paddingRight {number|string} right padding
+ * @param paddingBottom {number|string} bottom padding
+ * @param paddingLeft {number|string} left padding
  * @param p {number|string} padding (all cardinal directions)
  * @param px {number|string} padding along x-axis
  * @param py {number|string} padding along y-axis
@@ -59,6 +80,13 @@ export interface MarginProps {
  * @param pl {number|string} left padding
  */
 export interface PaddingProps {
+  padding?: number | string;
+  paddingX?: number | string;
+  paddingY?: number | string;
+  paddingTop?: number | string;
+  paddingRight?: number | string;
+  paddingBottom?: number | string;
+  paddingLeft?: number | string;
   p?: number | string;
   px?: number | string;
   py?: number | string;
@@ -185,6 +213,7 @@ export interface TextProps {
  */
 export interface BaseProps
   extends DisplayProps,
+    DimensionProps,
     MarginProps,
     PaddingProps,
     TextAlignProps,

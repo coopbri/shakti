@@ -52,45 +52,77 @@
   ],
   "margin": [
     {
-      "name": "m",
+      "name": "margin (m)",
       "type": "number or string",
       "notes": "margin (all cardinal directions)"
     },
     {
-      "name": "mx",
+      "name": "marginX (mx)",
       "type": "number or string",
       "notes": "margin along x-axis"
     },
     {
-      "name": "my",
+      "name": "marginY (my)",
       "type": "number or string",
       "notes": "margin along y-axis"
     },
-    { "name": "mt", "type": "number or string", "notes": "top margin" },
-    { "name": "mr", "type": "number or string", "notes": "right margin" },
-    { "name": "mb", "type": "number or string", "notes": "bottom margin" },
-    { "name": "ml", "type": "number or string", "notes": "left margin" }
+    {
+      "name": "marginTop (mt)",
+      "type": "number or string",
+      "notes": "top margin"
+    },
+    {
+      "name": "marginRight (mr)",
+      "type": "number or string",
+      "notes": "right margin"
+    },
+    {
+      "name": "marginBottom (mb)",
+      "type": "number or string",
+      "notes": "bottom margin"
+    },
+    {
+      "name": "marginLeft (ml)",
+      "type": "number or string",
+      "notes": "left margin"
+    }
   ],
   "padding": [
     {
-      "name": "p",
+      "name": "padding (p)",
       "type": "number or string",
       "notes": "padding (all cardinal directions)"
     },
     {
-      "name": "px",
+      "name": "paddingX (px)",
       "type": "number or string",
       "notes": "padding along x-axis"
     },
     {
-      "name": "py",
+      "name": "paddingY (py)",
       "type": "number or string",
       "notes": "padding along y-axis"
     },
-    { "name": "pt", "type": "number or string", "notes": "top padding" },
-    { "name": "pr", "type": "number or string", "notes": "right padding" },
-    { "name": "pb", "type": "number or string", "notes": "bottom padding" },
-    { "name": "pl", "type": "number or string", "notes": "left padding" }
+    {
+      "name": "paddingTop (pt)",
+      "type": "number or string",
+      "notes": "top padding"
+    },
+    {
+      "name": "paddingRight (pr)",
+      "type": "number or string",
+      "notes": "right padding"
+    },
+    {
+      "name": "paddingBottom (pb)",
+      "type": "number or string",
+      "notes": "bottom padding"
+    },
+    {
+      "name": "paddingLeft (pl)",
+      "type": "number or string",
+      "notes": "left padding"
+    }
   ],
   "color": [
     { "name": "color", "type": "string", "notes": "color" },

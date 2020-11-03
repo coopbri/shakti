@@ -26,6 +26,7 @@ import {
   NavMenu,
   NavCard,
   PropTable,
+  Remark,
 } from "../components";
 import { theme } from "../constants";
 
@@ -36,6 +37,7 @@ const shortcodes = {
   DocLink,
   ExternalLink,
   PropTable,
+  Remark,
   // syntax highlighting
   pre: CodeBlock,
   code: CodeFragment,

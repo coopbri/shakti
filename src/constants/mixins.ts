@@ -48,7 +48,14 @@ const textAlign = css<TextAlignProps>`
 /**
  * Margin (pixels)
  */
-const margin = css<MarginProps>`
+const elementMargin = css<MarginProps>`
+  margin: ${({ margin }) => checkType(margin)};
+  margin: 0 ${({ marginX }) => (marginX ? checkType(marginX) : "px")};
+  margin: ${({ marginY }) => (marginY ? checkType(marginY) : "px")} 0;
+  margin-top: ${({ marginTop }) => checkType(marginTop)};
+  margin-right: ${({ marginRight }) => checkType(marginRight)};
+  margin-bottom: ${({ marginBottom }) => checkType(marginBottom)};
+  margin-left: ${({ marginLeft }) => checkType(marginLeft)};
   margin: ${({ m }) => checkType(m)};
   margin: 0 ${({ mx }) => (mx ? checkType(mx) : "px")};
   margin: ${({ my }) => (my ? checkType(my) : "px")} 0;
@@ -61,10 +68,17 @@ const margin = css<MarginProps>`
 /**
  * Padding (pixels)
  */
-const padding = css<PaddingProps>`
+const elementPadding = css<PaddingProps>`
+  padding: ${({ padding }) => checkType(padding)};
+  padding: 0 ${({ paddingX }) => (paddingX ? checkType(paddingX) : "px")};
+  padding: ${({ paddingY }) => (paddingY ? checkType(paddingY) : "px")} 0;
+  padding-top: ${({ paddingTop }) => checkType(paddingTop)};
+  padding-right: ${({ paddingRight }) => checkType(paddingRight)};
+  padding-bottom: ${({ paddingBottom }) => checkType(paddingBottom)};
+  padding-left: ${({ paddingLeft }) => checkType(paddingLeft)};
   padding: ${({ p }) => checkType(p)};
   padding: 0 ${({ px }) => (px ? checkType(px) : "px")};
-  padding: ${({ py }) => (py ? checkType(py) : "py")} 0;
+  padding: ${({ py }) => (py ? checkType(py) : "px")} 0;
   padding-top: ${({ pt }) => checkType(pt)};
   padding-right: ${({ pr }) => checkType(pr)};
   padding-bottom: ${({ pb }) => checkType(pb)};
@@ -111,8 +125,8 @@ const border = css<BorderProps>`
 export const baseStyles = css`
   ${display}
   ${dimension}
-  ${margin}
-  ${padding}
+  ${elementMargin}
+  ${elementPadding}
   ${color}
   ${border}
   ${textAlign}
