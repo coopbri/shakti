@@ -3,7 +3,7 @@
   "author": "Brian Cooper <brian@brian-cooper.com> (https://brian-cooper.com)",
   "description": "A universal React component toolkit.",
   "homepage": "https://shaktilib.com/",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "main": "build/index.js",
   "module": "build/index.es.js",
