@@ -27,6 +27,7 @@ import {
   NavCard,
   PropTable,
   Remark,
+  SEO,
 } from "../components";
 import { theme } from "../constants";
 
@@ -53,6 +54,7 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
+        description
         path
       }
     }
@@ -123,113 +125,119 @@ const Layout = ({ location, data: { mdx }, pageContext }) => {
   }, [navOpen]);
 
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Grid>
-        <HeaderRow
-          ref={headerRef}
-          py={isSmall ? 5 : 0}
-          bgColor={theme.colors.background}
-        >
-          {isSmall && (
-            <Col ml={15}>
-              <MenuButton
-                size="2.5em"
-                onClick={() => {
-                  setNavOpen(!navOpen);
-                }}
-                open={navOpen}
-              />
-            </Col>
-          )}
-          <Col alignCenter>
-            <HeaderText
-              my={isSmall ? 8 : 14}
-              color={theme.colors.text}
-              isSmall={isSmall}
-            >
-              SHAKTI
-            </HeaderText>
-          </Col>
-          {isSmall && <Col></Col>}
-        </HeaderRow>
-
-        <Row>
-          <NavCol
-            ref={navRef}
-            open={navOpen}
-            headerHeight={headerHeight}
-            isSmall={isSmall}
-            size={1}
-            alignCenter
-            pt={10}
-            pl={isSmall ? 10 : 20}
-            pr={isSmall ? 10 : 20}
+    <>
+      <SEO
+        title={mdx.frontmatter.title}
+        description={mdx.frontmatter.description}
+      />
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Grid>
+          <HeaderRow
+            ref={headerRef}
+            py={isSmall ? 5 : 0}
+            bgColor={theme.colors.background}
           >
-            <LogoContainer
-              pb={20}
-              onClick={() => {
-                navigate("/");
-              }}
-            >
-              <Logo />
-            </LogoContainer>
-
-            <NavMenu location={location} />
-
-            <Copyright mt={0} mb={10} size={16}>
-              <CopyrightLink
-                href="https://github.com/coopbri/"
-                target="_blank"
-                rel="noopener noreferrer"
+            {isSmall && (
+              <Col ml={15}>
+                <MenuButton
+                  size="2.5em"
+                  onClick={() => {
+                    setNavOpen(!navOpen);
+                  }}
+                  open={navOpen}
+                />
+              </Col>
+            )}
+            <Col alignCenter>
+              <HeaderText
+                my={isSmall ? 8 : 14}
+                color={theme.colors.text}
+                isSmall={isSmall}
               >
-                &copy; Brian Cooper
-              </CopyrightLink>
-            </Copyright>
-          </NavCol>
+                SHAKTI
+              </HeaderText>
+            </Col>
+            {isSmall && <Col></Col>}
+          </HeaderRow>
 
-          <ContentCol size={3} mx={isSmall ? 10 : 25} mt={15}>
-            <h1>{mdx.frontmatter.title}</h1>
+          <Row>
+            <NavCol
+              ref={navRef}
+              open={navOpen}
+              headerHeight={headerHeight}
+              isSmall={isSmall}
+              size={1}
+              alignCenter
+              pt={10}
+              pl={isSmall ? 10 : 20}
+              pr={isSmall ? 10 : 20}
+            >
+              <LogoContainer
+                pb={20}
+                onClick={() => {
+                  navigate("/");
+                }}
+              >
+                <Logo />
+              </LogoContainer>
 
-            <MDXProvider components={shortcodes}>
-              <MDXRenderer>{mdx.body}</MDXRenderer>
-            </MDXProvider>
-            <Flex my={15} mx={15} flexCol={isSmall}>
-              {previous === false ? null : (
-                <Col>
-                  {previous && (
-                    <NavCard
-                      title="Previous"
-                      path={previous.node.frontmatter.path}
-                      text={previous.node.frontmatter.title}
-                      alignEnd
-                      pr={15}
-                    />
-                  )}
-                </Col>
-              )}
+              <NavMenu location={location} />
 
-              {next === false ? null : (
-                <Col mt={isSmall && 10}>
-                  {next && (
-                    <NavCard
-                      title="Next"
-                      path={next.node.frontmatter.path}
-                      text={next.node.frontmatter.title}
-                      alignStart
-                      pl={15}
-                    />
-                  )}
-                </Col>
-              )}
-            </Flex>
-          </ContentCol>
+              <Copyright mt={0} mb={10} size={16}>
+                <CopyrightLink
+                  href="https://github.com/coopbri/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  &copy; Brian Cooper
+                </CopyrightLink>
+              </Copyright>
+            </NavCol>
 
-          {/* add spacing column if viewport is extra large */}
-          {isExtraLarge && <Col size={1}></Col>}
-        </Row>
-      </Grid>
-    </ThemeProvider>
+            <ContentCol size={3} mx={isSmall ? 10 : 25} mt={15}>
+              <h1>{mdx.frontmatter.title}</h1>
+
+              <MDXProvider components={shortcodes}>
+                <MDXRenderer>{mdx.body}</MDXRenderer>
+              </MDXProvider>
+              <Flex my={15} mx={15} flexCol={isSmall}>
+                {previous === false ? null : (
+                  <Col>
+                    {previous && (
+                      <NavCard
+                        title="Previous"
+                        path={previous.node.frontmatter.path}
+                        text={previous.node.frontmatter.title}
+                        alignEnd
+                        pr={15}
+                      />
+                    )}
+                  </Col>
+                )}
+
+                {next === false ? null : (
+                  <Col mt={isSmall && 10}>
+                    {next && (
+                      <NavCard
+                        title="Next"
+                        path={next.node.frontmatter.path}
+                        text={next.node.frontmatter.title}
+                        alignStart
+                        pl={15}
+                      />
+                    )}
+                  </Col>
+                )}
+              </Flex>
+            </ContentCol>
+
+            {/* add spacing column if viewport is extra large */}
+            {isExtraLarge && <Col size={1}></Col>}
+          </Row>
+        </Grid>
+      </ThemeProvider>
+    </>
   );
 };
 

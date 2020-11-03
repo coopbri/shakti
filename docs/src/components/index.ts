@@ -11,3 +11,4 @@ export { NavCard } from "./NavCard";
 export { NavMenu } from "./NavMenu";
 export { PropTable } from "./PropTable";
 export { Remark } from "./Remark";
+export { SEO } from "./SEO";

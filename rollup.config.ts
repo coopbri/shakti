@@ -22,14 +22,18 @@ export default {
       sourcemap: true,
     },
   ],
-  external: ["react"],
   plugins: [
+    // prevent peer dependencies from being bundled
     peerDeps(),
+    // bundle third party dependencies in `node_modules`
     resolve(),
+    // allow transpilation to CommonJS format
     cjs(),
+    // transpile TS into JS
     ts({
       useTsconfigDeclarationDir: true,
     }),
+    // minify bundle
     terser(),
   ],
 };
