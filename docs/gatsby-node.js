@@ -11,6 +11,7 @@ exports.createPages = async ({ graphql, actions }) => {
             id
             frontmatter {
               title
+              description
               path
             }
           }
@@ -31,10 +32,12 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       // title from frontmatter
       title: node.frontmatter.title,
+      // description from frontmatter
+      description: node.frontmatter.description,
       // path from frontmatter
       path: node.frontmatter.path,
       // MDX content wrapper
-      component: path.resolve(`./src/templates/Layout.tsx`),
+      component: path.resolve(`./src/pages/Layout.tsx`),
       context: { id: node.id, previous, next },
     });
   });

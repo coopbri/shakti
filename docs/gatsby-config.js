@@ -1,11 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Shakti Documentation`,
-    description: `Documentation for Shakti: a universal React component toolkit`,
+    defaultTitle: `Shakti`,
+    defaultDescription: `Documentation for Shakti, a universal React component toolkit.`,
+    defaultImage: `./assets/img/shakti-logo.png`,
     author: `Brian Cooper`,
+    baseUrl: `https://shaktilib.com`,
+    // `locale` is used in Open Graph
+    locale: `en_us`,
   },
   plugins: [
     `gatsby-plugin-typescript`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
