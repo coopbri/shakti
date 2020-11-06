@@ -30,19 +30,23 @@ const PropTable = ({
   return (
     <Container>
       <Table>
-        <Header>
-          <th>{colOneTitle || "Prop"}</th>
-          <th>{colTwoTitle || "Type"}</th>
-          <th>{colThreeTitle || "Notes"}</th>
-        </Header>
+        <thead>
+          <Header>
+            <th>{colOneTitle || "Prop"}</th>
+            <th>{colTwoTitle || "Type"}</th>
+            <th>{colThreeTitle || "Notes"}</th>
+          </Header>
+        </thead>
 
-        {propList.map((prop: any) => (
-          <tr>
-            <td>{prop.name}</td>
-            <td>{prop.type}</td>
-            <td>{prop.notes}</td>
-          </tr>
-        ))}
+        <tbody>
+          {propList.map((prop: any) => (
+            <tr key={prop.name}>
+              <td>{prop.name}</td>
+              <td>{prop.type}</td>
+              <td>{prop.notes}</td>
+            </tr>
+          ))}
+        </tbody>
       </Table>
     </Container>
   );

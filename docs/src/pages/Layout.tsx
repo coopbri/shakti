@@ -39,6 +39,7 @@ const shortcodes = {
   ExternalLink,
   PropTable,
   Remark,
+  Text,
   // syntax highlighting
   pre: CodeBlock,
   code: CodeFragment,
