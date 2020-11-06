@@ -1,0 +1,31 @@
+---
+index: 8
+title: Prefabs
+description: Prefabricated components in the Shakti library.
+path: /prefabs
+---
+
+Although Shakti allows you to easily build your own component library from its primitives, there are also some prefabricated ("prefab") components you can drop into your application. They are more integrated and thorough than the primitive components, but still allow the flexibility of composition. All Shakti prefabs allow <code>Base</code> props to be mixed in, as well as props from components they are composed upon (i.e. if a prefab is built on <code>Flex</code>, it can, of course, accept <code>Flex</code> props).
+
+<Alert>
+    It is recommended to avoid using prefabs in favor of building your own custom UI components, but they can be used if you want quick prototypes or want to have a more comprehensive base for creating UI compositions.
+</Alert>
+
+## Card
+A card is a <code>Flex</code> component augmented with custom styles to make it look "card-like".
+
+```tsx
+<Card bgColor="#af33ff" alignCenter justifySpaceAround>
+    <Text color="white" my={18}>Not quite a credit card</Text>
+    <Text>💳</Text>
+</Card>
+```
+
+```tsx render=true
+render(() => (
+    <Card bgColor="#af33ff" alignCenter justifySpaceAround>
+        <Text color="white" my={18}>Not quite a credit card</Text>
+        <Text>💳</Text>
+    </Card>
+))
+```

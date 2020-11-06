@@ -11,6 +11,7 @@ import {
   Flex,
   Text,
   Button,
+  Card,
   breakpoints,
   useWindowQuery,
 } from "shakti-lib";
@@ -30,6 +31,7 @@ const scope = {
   Flex,
   Text,
   Button,
+  Card,
   breakpoints,
   useWindowQuery,
 };

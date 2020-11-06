@@ -10,6 +10,7 @@ import {
   DisplayProps,
   MarginProps,
   PaddingProps,
+  ShadowProps,
   TextAlignProps,
   TextProps,
 } from "../lib/types";
@@ -39,6 +40,8 @@ const dimension = css<DimensionProps>`
  * Text alignment
  */
 const textAlign = css<TextAlignProps>`
+  text-align: ${({ textStart }) => textStart && "start"};
+  text-align: ${({ textEnd }) => textEnd && "end"};
   text-align: ${({ textLeft }) => textLeft && "left"};
   text-align: ${({ textCenter }) => textCenter && "center"};
   text-align: ${({ textRight }) => textRight && "right"};
@@ -120,6 +123,14 @@ const border = css<BorderProps>`
 `;
 
 /**
+ * Shadow
+ */
+const shadow = css<ShadowProps>`
+  box-shadow: ${({ boxShadow }) => boxShadow};
+  text-shadow: ${({ textShadow }) => textShadow};
+`;
+
+/**
  * Base CSS styles
  */
 export const baseStyles = css`
@@ -129,6 +140,7 @@ export const baseStyles = css`
   ${elementPadding}
   ${color}
   ${border}
+  ${shadow}
   ${textAlign}
 `;
 

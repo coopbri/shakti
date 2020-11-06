@@ -98,12 +98,16 @@ export interface PaddingProps {
 
 /**
  * Interface for text alignment.
+ * @param textStart {boolean} align text to start
+ * @param textEnd {boolean} align text to end
  * @param textLeft {boolean} align text to left
  * @param textCenter {boolean} align text to center
  * @param textRight {boolean} align text to right
  * @param textJustify {boolean} justify text
  */
 export interface TextAlignProps {
+  textStart?: boolean;
+  textEnd?: boolean;
   textLeft?: boolean;
   textCenter?: boolean;
   textRight?: boolean;
@@ -192,6 +196,16 @@ export interface BorderProps {
   borderRight?: number | string;
   borderBottom?: number | string;
   borderLeft?: number | string;
+}
+
+/**
+ * Interface for shadow props.
+ * @param boxShadow {string} box shadow
+ * @param textShadow {string} text shadow
+ */
+export interface ShadowProps {
+  boxShadow?: string;
+  textShadow?: string;
 }
 
 /**

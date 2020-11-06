@@ -16,11 +16,6 @@ const cssReset = css`
   a {
     text-decoration: none;
   }
-
-  ul,
-  ol {
-    margin-top: 0;
-  }
 `;
 
 /**
@@ -49,6 +44,10 @@ const GlobalStyle = createGlobalStyle`
   h6 {
     margin: 30px 0 -5px 0;
     position: unset !important;
+  }
+
+  p {
+    margin: 8px 0;
   }
 
   a {
