@@ -20,7 +20,7 @@ const NavMenu = ({ location }) => {
         </NavLink>
       </NavEntry>
 
-      <Divider my={16} />
+      <Divider my={8} />
 
       <NavEntry>
         <NavLink to="/base" location={location}>
@@ -42,8 +42,13 @@ const NavMenu = ({ location }) => {
           Button
         </NavLink>
       </NavEntry>
+      <NavEntry>
+        <NavLink to="/prefabs" location={location}>
+          Prefabs
+        </NavLink>
+      </NavEntry>
 
-      <Divider my={16} />
+      <Divider my={8} />
 
       <NavEntry>
         <NavLink to="/media" location={location}>
@@ -51,7 +56,7 @@ const NavMenu = ({ location }) => {
         </NavLink>
       </NavEntry>
 
-      <Divider my={16} />
+      <Divider my={8} />
 
       <NavEntry>
         <NavLink to="/recipes" location={location}>
@@ -64,7 +69,7 @@ const NavMenu = ({ location }) => {
         </NavLink>
       </NavEntry>
 
-      <Divider my={16} />
+      <Divider my={8} />
 
       <NavEntry>
         <ExternalLink

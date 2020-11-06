@@ -1,5 +1,4 @@
 export { Alert } from "./Alert";
-export { Card } from "./Card";
 export { CodeBlock } from "./CodeBlock";
 export { CodeFragment } from "./CodeFragment";
 export { Divider } from "./Divider";
