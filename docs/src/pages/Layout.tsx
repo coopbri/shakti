@@ -6,11 +6,11 @@ import {
   Grid,
   Row,
   Col,
+  Flex,
   View,
   Text,
   useWindowQuery,
   breakpoints,
-  Flex,
 } from "shakti-lib";
 import styled, { ThemeProvider } from "styled-components";
 import { HiOutlineMenu } from "react-icons/hi";

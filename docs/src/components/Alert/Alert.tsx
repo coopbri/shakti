@@ -1,13 +1,14 @@
 import React from "react";
-import { Text } from "shakti-lib";
+import { Text, Card } from "shakti-lib";
 
-import { Card } from "../";
 import { theme } from "../../constants";
 
 const Alert = ({ children }) => {
   return (
-    <Card color={theme.colors.red}>
-      <Text color="white">{children}</Text>
+    <Card bgColor={theme.colors.red}>
+      <Text color="white" m={0}>
+        {children}
+      </Text>
     </Card>
   );
 };

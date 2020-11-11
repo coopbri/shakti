@@ -40,6 +40,8 @@ const dimension = css<DimensionProps>`
  * Text alignment
  */
 const textAlign = css<TextAlignProps>`
+  text-align: ${({ textStart }) => textStart && "start"};
+  text-align: ${({ textEnd }) => textEnd && "end"};
   text-align: ${({ textLeft }) => textLeft && "left"};
   text-align: ${({ textCenter }) => textCenter && "center"};
   text-align: ${({ textRight }) => textRight && "right"};

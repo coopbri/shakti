@@ -277,6 +277,8 @@
     { "name": "italic", "type": "boolean", "notes": "italic text" }
   ],
   "textAlign": [
+    { "name": "textStart", "type": "boolean", "notes": "align text to start" },
+    { "name": "textEnd", "type": "boolean", "notes": "align text to end" },
     { "name": "textLeft", "type": "boolean", "notes": "align text to left" },
     {
       "name": "textCenter",

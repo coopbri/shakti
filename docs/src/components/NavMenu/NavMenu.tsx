@@ -42,6 +42,11 @@ const NavMenu = ({ location }) => {
           Button
         </NavLink>
       </NavEntry>
+      <NavEntry>
+        <NavLink to="/prefabs" location={location}>
+          Prefabs
+        </NavLink>
+      </NavEntry>
 
       <Divider my={8} />
 
