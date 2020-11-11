@@ -176,6 +176,7 @@ const Layout = ({ location, data: { mdx }, pageContext }) => {
             >
               <LogoContainer
                 pb={20}
+                mb={8}
                 onClick={() => {
                   navigate("/");
                 }}

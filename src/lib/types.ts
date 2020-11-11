@@ -195,6 +195,16 @@ export interface BorderProps {
 }
 
 /**
+ * Interface for shadow props.
+ * @param boxShadow {string} box shadow
+ * @param textShadow {string} text shadow
+ */
+export interface ShadowProps {
+  boxShadow?: string;
+  textShadow?: string;
+}
+
+/**
  * Interface for core text props.
  * @param size {number|string} font size
  * @param weight {number|string} font weight
