@@ -2,74 +2,25 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { FaGithub as GitHubIcon } from "react-icons/fa";
-import { Text } from "shakti-lib";
 
 import { Divider } from "../";
+import { navMenuItems } from "../../constants";
 
 const NavMenu = ({ location }) => {
   return (
     <NavList>
-      <NavEntry>
-        <NavLink to="/" location={location}>
-          Introduction
-        </NavLink>
-      </NavEntry>
-      <NavEntry>
-        <NavLink to="/getting-started" location={location}>
-          Getting Started
-        </NavLink>
-      </NavEntry>
+      {navMenuItems.map((item) => (
+        <>
+          <NavEntry>
+            <NavLink to={item[1]} location={location}>
+              {item[0]}
+            </NavLink>
+          </NavEntry>
 
-      <Divider my={8} />
-
-      <NavEntry>
-        <NavLink to="/base" location={location}>
-          Base
-        </NavLink>
-      </NavEntry>
-      <NavEntry>
-        <NavLink to="/layout" location={location}>
-          Layout
-        </NavLink>
-      </NavEntry>
-      <NavEntry>
-        <NavLink to="/text" location={location}>
-          Text
-        </NavLink>
-      </NavEntry>
-      <NavEntry>
-        <NavLink to="/button" location={location}>
-          Button
-        </NavLink>
-      </NavEntry>
-      <NavEntry>
-        <NavLink to="/prefabs" location={location}>
-          Prefabs
-        </NavLink>
-      </NavEntry>
-
-      <Divider my={8} />
-
-      <NavEntry>
-        <NavLink to="/media" location={location}>
-          Media
-        </NavLink>
-      </NavEntry>
-
-      <Divider my={8} />
-
-      <NavEntry>
-        <NavLink to="/recipes" location={location}>
-          Recipes
-        </NavLink>
-      </NavEntry>
-      <NavEntry>
-        <NavLink to="/sandbox" location={location}>
-          Sandbox
-        </NavLink>
-      </NavEntry>
-
-      <Divider my={8} />
+          {/* render divider below entry if boolean switch is true */}
+          {item[2] && <Divider my={8} />}
+        </>
+      ))}
 
       <NavEntry>
         <ExternalLink

@@ -14,8 +14,6 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.19",
     "@mdx-js/react": "^1.6.19",
-    "@types/react-helmet": "^6.1.0",
-    "@types/styled-components": "^5.1.4",
     "babel-plugin-styled-components": "^1.11.1",
     "fontsource-noto-sans-jp": "^3.0.9",
     "gatsby": "^2.24.79",
@@ -37,5 +35,10 @@
     "react-live": "^2.2.2",
     "shakti-lib": "^0.2.2",
     "styled-components": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/react-helmet": "^6.1.0",
+    "@types/styled-components": "^5.1.4",
+    "ts-node-dev": "^1.0.0"
   }
 }
