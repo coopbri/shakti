@@ -28,3 +28,45 @@ export const BaseButton = styled.button<BaseProps>`
   ${baseStyles}
   ${textStyles}
 `;
+
+/**
+ * Base `ul` tag.
+ */
+export const BaseUl = styled.ul<BaseProps>`
+  ${baseStyles}
+`;
+
+/**
+ * Base `ol` tag.
+ */
+export const BaseOl = styled.ol<BaseProps>`
+  ${baseStyles}
+`;
+
+/**
+ * Base `dl` tag.
+ */
+export const BaseDl = styled.dl<BaseProps>`
+  ${baseStyles}
+`;
+
+/**
+ * Base `dt` tag.
+ */
+export const BaseDt = styled.dt<BaseProps>`
+  ${baseStyles}
+`;
+
+/**
+ * Base `dd` tag.
+ */
+export const BaseDd = styled.dd<BaseProps>`
+  ${baseStyles}
+`;
+
+/**
+ * Base `li` tag.
+ */
+export const BaseLi = styled.li<BaseProps>`
+  ${baseStyles}
+`;

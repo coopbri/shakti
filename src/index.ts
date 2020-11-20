@@ -7,7 +7,22 @@ import breakpoints from "./constants/breakpoints";
 import useWindowQuery from "./lib/hooks/useWindowQuery";
 
 // components
-import { View, Flex, Grid, Row, Col, Text, Button, Card } from "./components";
+import {
+  View,
+  Flex,
+  Grid,
+  Row,
+  Col,
+  Text,
+  Button,
+  Card,
+  UnorderedList,
+  OrderedList,
+  ListItem,
+  DescriptionList,
+  DescriptionTerm,
+  DescriptionDetail,
+} from "./components";
 
 export {
   breakpoints,
@@ -20,4 +35,10 @@ export {
   Text,
   Button,
   Card,
+  UnorderedList,
+  OrderedList,
+  ListItem,
+  DescriptionList,
+  DescriptionTerm,
+  DescriptionDetail,
 };
