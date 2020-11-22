@@ -20,7 +20,7 @@ import {
  * Display
  * important is set to force override existing default (e.g. display: flex)
  */
-const display = css<DisplayProps>`
+const DISPLAY = css<DisplayProps>`
   display: ${({ shown }) => shown && "block !important"};
   display: ${({ hidden }) => hidden && "none !important"};
 `;
@@ -28,7 +28,7 @@ const display = css<DisplayProps>`
 /**
  * Dimension
  */
-const dimension = css<DimensionProps>`
+const DIMENSION = css<DimensionProps>`
   min-width: ${({ minWidth }) => checkType(minWidth)};
   width: ${({ width }) => checkType(width)};
   max-width: ${({ maxWidth }) => checkType(maxWidth)};
@@ -40,7 +40,7 @@ const dimension = css<DimensionProps>`
 /**
  * Text alignment
  */
-const textAlign = css<TextAlignProps>`
+const TEXT_ALIGN = css<TextAlignProps>`
   text-align: ${({ textStart }) => textStart && "start"};
   text-align: ${({ textEnd }) => textEnd && "end"};
   text-align: ${({ textLeft }) => textLeft && "left"};
@@ -52,7 +52,7 @@ const textAlign = css<TextAlignProps>`
 /**
  * Text transformation
  */
-const elementTextTransform = css<TextTransformProps>`
+const TEXT_TRANSFORM = css<TextTransformProps>`
   text-transform: ${({ textTransform }) => textTransform};
   text-transform: ${({ tt }) => tt};
   text-transform: ${({ uppercase }) => uppercase && "uppercase"};
@@ -63,7 +63,7 @@ const elementTextTransform = css<TextTransformProps>`
 /**
  * Margin (pixels)
  */
-const elementMargin = css<MarginProps>`
+const MARGIN = css<MarginProps>`
   margin: ${({ margin }) => checkType(margin)};
   margin: 0 ${({ marginX }) => (marginX ? checkType(marginX) : "px")};
   margin: ${({ marginY }) => (marginY ? checkType(marginY) : "px")} 0;
@@ -83,7 +83,7 @@ const elementMargin = css<MarginProps>`
 /**
  * Padding (pixels)
  */
-const elementPadding = css<PaddingProps>`
+const PADDING = css<PaddingProps>`
   padding: ${({ padding }) => checkType(padding)};
   padding: 0 ${({ paddingX }) => (paddingX ? checkType(paddingX) : "px")};
   padding: ${({ paddingY }) => (paddingY ? checkType(paddingY) : "px")} 0;
@@ -103,7 +103,7 @@ const elementPadding = css<PaddingProps>`
 /**
  * Text
  */
-const text = css<TextProps>`
+const TEXT = css<TextProps>`
   font-size: ${({ size }) => checkType(size)};
   font-weight: ${({ bold }) => bold && "bold"};
   font-weight: ${({ weight }) => checkType(weight, false)};
@@ -114,7 +114,7 @@ const text = css<TextProps>`
  * Color
  */
 /* eslint-disable @typescript-eslint/no-shadow */
-const color = css<ColorProps>`
+const COLOR = css<ColorProps>`
   color: ${({ color }) => color};
   background-color: ${({ backgroundColor }) => backgroundColor};
   background-color: ${({ bgColor }) => bgColor};
@@ -123,7 +123,7 @@ const color = css<ColorProps>`
 /**
  * Border
  */
-const border = css<BorderProps>`
+const BORDER = css<BorderProps>`
   border: ${({ border }) => border};
   border-width: ${({ borderWidth }) => checkType(borderWidth)};
   border-style: ${({ borderStyle }) => borderStyle};
@@ -138,7 +138,7 @@ const border = css<BorderProps>`
 /**
  * Shadow
  */
-const shadow = css<ShadowProps>`
+const SHADOW = css<ShadowProps>`
   box-shadow: ${({ boxShadow }) => boxShadow};
   text-shadow: ${({ textShadow }) => textShadow};
 `;
@@ -147,20 +147,20 @@ const shadow = css<ShadowProps>`
  * Base CSS styles
  */
 export const baseStyles = css`
-  ${display}
-  ${dimension}
-  ${elementMargin}
-  ${elementPadding}
-  ${color}
-  ${border}
-  ${shadow}
-  ${textAlign}
-  ${elementTextTransform}
+  ${DISPLAY}
+  ${DIMENSION}
+  ${MARGIN}
+  ${PADDING}
+  ${COLOR}
+  ${BORDER}
+  ${SHADOW}
+  ${TEXT_ALIGN}
+  ${TEXT_TRANSFORM}
 `;
 
 /**
  * Base text styles
  */
 export const textStyles = css`
-  ${text}
+  ${TEXT}
 `;
