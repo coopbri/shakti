@@ -291,5 +291,27 @@
     },
     { "name": "textRight", "type": "boolean", "notes": "align text to right" },
     { "name": "textJustify", "type": "boolean", "notes": "justify text" }
+  ],
+  "textTransform": [
+    {
+      "name": "textTransform (tt)",
+      "type": "string",
+      "notes": "text transformation"
+    },
+    {
+      "name": "uppercase",
+      "type": "boolean",
+      "notes": "uppercase text (e.g. EXAMPLE)"
+    },
+    {
+      "name": "lowercase",
+      "type": "boolean",
+      "notes": "lowercase text (e.g. example)"
+    },
+    {
+      "name": "capitalize",
+      "type": "boolean",
+      "notes": "capitalize text (e.g. Example)"
+    }
   ]
 }

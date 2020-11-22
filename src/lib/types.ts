@@ -115,6 +115,22 @@ export interface TextAlignProps {
 }
 
 /**
+ * Interface for text transformation.
+ * @param textTransform {string} text transformation
+ * @param tt {string} text transformation
+ * @param uppercase {boolean} uppercase text (e.g. EXAMPLE)
+ * @param lowercase {boolean} lowercase text (e.g. example)
+ * @param capitalize {boolean} capitalize text (e.g. Example)
+ */
+export interface TextTransformProps {
+  textTransform?: string;
+  tt?: string;
+  uppercase?: boolean;
+  lowercase?: boolean;
+  capitalize?: boolean;
+}
+
+/**
  * Interface for flex-enabled `div`.
  * @param flexRow {boolean} set flex direction to row
  * @param flexCol {boolean} set flex direction to column

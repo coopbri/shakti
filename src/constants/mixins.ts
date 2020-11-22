@@ -13,6 +13,7 @@ import {
   ShadowProps,
   TextAlignProps,
   TextProps,
+  TextTransformProps,
 } from "../lib/types";
 
 /**
@@ -46,6 +47,17 @@ const textAlign = css<TextAlignProps>`
   text-align: ${({ textCenter }) => textCenter && "center"};
   text-align: ${({ textRight }) => textRight && "right"};
   text-align: ${({ textJustify }) => textJustify && "justify"};
+`;
+
+/**
+ * Text transformation
+ */
+const elementTextTransform = css<TextTransformProps>`
+  text-transform: ${({ textTransform }) => textTransform};
+  text-transform: ${({ tt }) => tt};
+  text-transform: ${({ uppercase }) => uppercase && "uppercase"};
+  text-transform: ${({ lowercase }) => lowercase && "lowercase"};
+  text-transform: ${({ capitalize }) => capitalize && "capitalize"};
 `;
 
 /**
@@ -143,6 +155,7 @@ export const baseStyles = css`
   ${border}
   ${shadow}
   ${textAlign}
+  ${elementTextTransform}
 `;
 
 /**
