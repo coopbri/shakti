@@ -104,6 +104,7 @@ const text = css<TextProps>`
 /* eslint-disable @typescript-eslint/no-shadow */
 const color = css<ColorProps>`
   color: ${({ color }) => color};
+  background-color: ${({ backgroundColor }) => backgroundColor};
   background-color: ${({ bgColor }) => bgColor};
 `;
 

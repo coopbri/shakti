@@ -126,7 +126,11 @@
   ],
   "color": [
     { "name": "color", "type": "string", "notes": "color" },
-    { "name": "bgColor", "type": "string", "notes": "background color" }
+    {
+      "name": "backgroundColor (bgColor)",
+      "type": "string",
+      "notes": "background color"
+    }
   ],
   "border": [
     {

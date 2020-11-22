@@ -167,10 +167,12 @@ export interface ColProps {
 /**
  * Interface for core color props.
  * @param color {string} color
+ * @param backgroundColor {string} background color
  * @param bgColor {string} background color
  */
 export interface ColorProps {
   color?: string;
+  backgroundColor?: string;
   bgColor?: string;
 }
 
