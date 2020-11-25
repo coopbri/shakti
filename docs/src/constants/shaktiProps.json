@@ -327,5 +327,17 @@
     },
     { "name": "bold (b)", "type": "boolean", "notes": "bold text" },
     { "name": "italic (i)", "type": "boolean", "notes": "italic text" }
+  ],
+  "shortcutTextAlign": [
+    { "name": "start", "type": "boolean", "notes": "align text to start" },
+    { "name": "end", "type": "boolean", "notes": "align text to end" },
+    { "name": "left", "type": "boolean", "notes": "align text to left" },
+    {
+      "name": "center",
+      "type": "boolean",
+      "notes": "align text to center"
+    },
+    { "name": "right", "type": "boolean", "notes": "align text to right" },
+    { "name": "justify", "type": "boolean", "notes": "justify text" }
   ]
 }

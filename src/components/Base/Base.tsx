@@ -3,7 +3,7 @@
 
 import styled from "styled-components";
 
-import { baseStyles, textStyles } from "../../constants";
+import { baseStyles, shortcutTextStyles } from "../../constants";
 import { BaseProps, TextBaseProps } from "../../lib/types";
 
 /**
@@ -18,7 +18,7 @@ export const BaseDiv = styled.div<BaseProps>`
  */
 export const BaseP = styled.p<TextBaseProps>`
   ${baseStyles}
-  ${textStyles}
+  ${shortcutTextStyles}
 `;
 
 /**
@@ -26,7 +26,7 @@ export const BaseP = styled.p<TextBaseProps>`
  */
 export const BaseButton = styled.button<BaseProps>`
   ${baseStyles}
-  ${textStyles}
+  ${shortcutTextStyles}
 `;
 
 /**

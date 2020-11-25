@@ -15,6 +15,7 @@ import {
   TextProps,
   TextTransformProps,
   ShortcutTextProps,
+  ShortcutTextAlignProps,
 } from "../lib/types";
 
 /**
@@ -112,18 +113,6 @@ const PADDING = css<PaddingProps>`
 `;
 
 /**
- * Text
- */
-const SHORTCUT_TEXT = css<ShortcutTextProps>`
-  font-size: ${({ size }) => checkType(size)};
-  font-weight: ${({ weight }) => checkType(weight, false)};
-  font-weight: ${({ bold }) => bold && "bold"};
-  font-weight: ${({ b }) => b && "bold"};
-  font-style: ${({ italic }) => italic && "italic"};
-  font-style: ${({ i }) => i && "italic"};
-`;
-
-/**
  * Color
  */
 /* eslint-disable @typescript-eslint/no-shadow */
@@ -157,6 +146,30 @@ const SHADOW = css<ShadowProps>`
 `;
 
 /**
+ * Text (shortcut)
+ */
+const SHORTCUT_TEXT = css<ShortcutTextProps>`
+  font-size: ${({ size }) => checkType(size)};
+  font-weight: ${({ weight }) => checkType(weight, false)};
+  font-weight: ${({ bold }) => bold && "bold"};
+  font-weight: ${({ b }) => b && "bold"};
+  font-style: ${({ italic }) => italic && "italic"};
+  font-style: ${({ i }) => i && "italic"};
+`;
+
+/**
+ * Text alignment (shortcut)
+ */
+const SHORTCUT_TEXT_ALIGN = css<ShortcutTextAlignProps>`
+  text-align: ${({ start }) => start && "start"};
+  text-align: ${({ end }) => end && "end"};
+  text-align: ${({ left }) => left && "left"};
+  text-align: ${({ center }) => center && "center"};
+  text-align: ${({ right }) => right && "right"};
+  text-align: ${({ justify }) => justify && "justify"};
+`;
+
+/**
  * Base CSS styles
  */
 export const baseStyles = css`
@@ -173,8 +186,9 @@ export const baseStyles = css`
 `;
 
 /**
- * Base text styles
+ * Shortcut text styles
  */
-export const textStyles = css`
+export const shortcutTextStyles = css`
   ${SHORTCUT_TEXT}
+  ${SHORTCUT_TEXT_ALIGN}
 `;

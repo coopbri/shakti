@@ -11,7 +11,7 @@ export interface DisplayProps {
 }
 
 /**
- * Dimension interface for width and height.
+ * Dimension interface for width and height props.
  * @param minWidth {number|string} minimum width
  * @param width {number|string} width
  * @param maxWidth {number|string} maximum width
@@ -97,7 +97,21 @@ export interface PaddingProps {
 }
 
 /**
- * Interface for text alignment.
+ * Interface for core text props.
+ * @param fontSize {number|string} font size
+ * @param fontWeight {number|string} font weight
+ * @param fontBold {boolean} bold text
+ * @param fontItalic {boolean} italic text
+ */
+export interface TextProps {
+  fontSize?: number | string;
+  fontWeight?: number | string;
+  fontBold?: boolean;
+  fontItalic?: boolean;
+}
+
+/**
+ * Interface for text alignment props.
  * @param textStart {boolean} align text to start
  * @param textEnd {boolean} align text to end
  * @param textLeft {boolean} align text to left
@@ -115,7 +129,7 @@ export interface TextAlignProps {
 }
 
 /**
- * Interface for text transformation.
+ * Interface for text transformation props.
  * @param textTransform {string} text transformation
  * @param tt {string} text transformation
  * @param uppercase {boolean} uppercase text (e.g. EXAMPLE)
@@ -131,7 +145,7 @@ export interface TextTransformProps {
 }
 
 /**
- * Interface for flex-enabled `div`.
+ * Interface for flex-enabled `div` props.
  * @param flexRow {boolean} set flex direction to row
  * @param flexCol {boolean} set flex direction to column
  * @param flexRowReverse {boolean} set flex direction to row-reverse
@@ -165,7 +179,7 @@ export interface FlexProps {
 }
 
 /**
- * Interface for grid column.
+ * Interface for grid column props.
  * @param size {number} relative width of column in row (defaults to 1)
  * @param showBelow {string} media breakpoint to show column at (shown at breakpoint or smaller)
  * @param showAbove {string} media breakpoint to show column at (shown at breakpoint or larger)
@@ -227,20 +241,6 @@ export interface ShadowProps {
 }
 
 /**
- * Interface for core text props.
- * @param fontSize {number|string} font size
- * @param fontWeight {number|string} font weight
- * @param fontBold {boolean} bold text
- * @param fontItalic {boolean} italic text
- */
-export interface TextProps {
-  fontSize?: number | string;
-  fontWeight?: number | string;
-  fontBold?: boolean;
-  fontItalic?: boolean;
-}
-
-/**
  * Interface for core text (shortcut) props.
  * @param size {number|string} font size
  * @param weight {number|string} font weight
@@ -254,6 +254,24 @@ export interface ShortcutTextProps {
   b?: boolean;
   italic?: boolean;
   i?: boolean;
+}
+
+/**
+ * Interface for text alignment (shortcut) props.
+ * @param start {boolean} align text to start
+ * @param end {boolean} align text to end
+ * @param left {boolean} align text to left
+ * @param center {boolean} align text to center
+ * @param right {boolean} align text to right
+ * @param justify {boolean} justify text
+ */
+export interface ShortcutTextAlignProps {
+  start?: boolean;
+  end?: boolean;
+  left?: boolean;
+  center?: boolean;
+  right?: boolean;
+  justify?: boolean;
 }
 
 /**

@@ -1,6 +1,6 @@
 // Constants barrel
 
 import breakpoints from "./breakpoints";
-import { baseStyles, textStyles } from "./mixins";
+import { baseStyles, shortcutTextStyles } from "./mixins";
 
-export { breakpoints, baseStyles, textStyles };
+export { breakpoints, baseStyles, shortcutTextStyles };
