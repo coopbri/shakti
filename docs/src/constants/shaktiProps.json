@@ -277,8 +277,8 @@
       "type": "number or string",
       "notes": "set font weight"
     },
-    { "name": "bold", "type": "boolean", "notes": "bold text" },
-    { "name": "italic", "type": "boolean", "notes": "italic text" }
+    { "name": "bold (b)", "type": "boolean", "notes": "bold text" },
+    { "name": "italic (i)", "type": "boolean", "notes": "italic text" }
   ],
   "textAlign": [
     { "name": "textStart", "type": "boolean", "notes": "align text to start" },

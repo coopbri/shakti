@@ -106,8 +106,10 @@ const PADDING = css<PaddingProps>`
 const TEXT = css<TextProps>`
   font-size: ${({ size }) => checkType(size)};
   font-weight: ${({ bold }) => bold && "bold"};
+  font-weight: ${({ b }) => b && "bold"};
   font-weight: ${({ weight }) => checkType(weight, false)};
   font-style: ${({ italic }) => italic && "italic"};
+  font-style: ${({ i }) => i && "italic"};
 `;
 
 /**

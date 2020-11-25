@@ -237,7 +237,9 @@ export interface TextProps {
   size?: number | string;
   weight?: number | string;
   bold?: boolean;
+  b?: boolean;
   italic?: boolean;
+  i?: boolean;
 }
 
 /**
