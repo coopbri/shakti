@@ -228,12 +228,26 @@ export interface ShadowProps {
 
 /**
  * Interface for core text props.
+ * @param fontSize {number|string} font size
+ * @param fontWeight {number|string} font weight
+ * @param fontBold {boolean} bold text
+ * @param fontItalic {boolean} italic text
+ */
+export interface TextProps {
+  fontSize?: number | string;
+  fontWeight?: number | string;
+  fontBold?: boolean;
+  fontItalic?: boolean;
+}
+
+/**
+ * Interface for core text (shortcut) props.
  * @param size {number|string} font size
  * @param weight {number|string} font weight
  * @param bold {boolean} bold text
  * @param italic {boolean} italic text
  */
-export interface TextProps {
+export interface ShortcutTextProps {
   size?: number | string;
   weight?: number | string;
   bold?: boolean;

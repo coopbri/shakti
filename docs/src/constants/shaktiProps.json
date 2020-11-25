@@ -268,17 +268,17 @@
   ],
   "text": [
     {
-      "name": "size",
+      "name": "fontSize",
       "type": "number or string",
       "notes": "set font size"
     },
     {
-      "name": "weight",
+      "name": "fontWeight",
       "type": "number or string",
       "notes": "set font weight"
     },
-    { "name": "bold (b)", "type": "boolean", "notes": "bold text" },
-    { "name": "italic (i)", "type": "boolean", "notes": "italic text" }
+    { "name": "fontBold", "type": "boolean", "notes": "bold text" },
+    { "name": "fontItalic", "type": "boolean", "notes": "italic text" }
   ],
   "textAlign": [
     { "name": "textStart", "type": "boolean", "notes": "align text to start" },
@@ -313,5 +313,19 @@
       "type": "boolean",
       "notes": "capitalize text (e.g. Example)"
     }
+  ],
+  "shortcutText": [
+    {
+      "name": "size",
+      "type": "number or string",
+      "notes": "set font size"
+    },
+    {
+      "name": "weight",
+      "type": "number or string",
+      "notes": "set font weight"
+    },
+    { "name": "bold (b)", "type": "boolean", "notes": "bold text" },
+    { "name": "italic (i)", "type": "boolean", "notes": "italic text" }
   ]
 }

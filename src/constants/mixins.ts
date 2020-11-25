@@ -14,6 +14,7 @@ import {
   TextAlignProps,
   TextProps,
   TextTransformProps,
+  ShortcutTextProps,
 } from "../lib/types";
 
 /**
@@ -35,6 +36,16 @@ const DIMENSION = css<DimensionProps>`
   min-height: ${({ minHeight }) => checkType(minHeight)};
   height: ${({ height }) => checkType(height)};
   max-height: ${({ maxHeight }) => checkType(maxHeight)};
+`;
+
+/**
+ * Text
+ */
+const TEXT = css<TextProps>`
+  font-size: ${({ fontSize }) => checkType(fontSize)};
+  font-weight: ${({ fontWeight }) => checkType(fontWeight, false)};
+  font-weight: ${({ fontBold }) => fontBold && "bold"};
+  font-style: ${({ fontItalic }) => fontItalic && "italic"};
 `;
 
 /**
@@ -103,11 +114,11 @@ const PADDING = css<PaddingProps>`
 /**
  * Text
  */
-const TEXT = css<TextProps>`
+const SHORTCUT_TEXT = css<ShortcutTextProps>`
   font-size: ${({ size }) => checkType(size)};
+  font-weight: ${({ weight }) => checkType(weight, false)};
   font-weight: ${({ bold }) => bold && "bold"};
   font-weight: ${({ b }) => b && "bold"};
-  font-weight: ${({ weight }) => checkType(weight, false)};
   font-style: ${({ italic }) => italic && "italic"};
   font-style: ${({ i }) => i && "italic"};
 `;
@@ -156,6 +167,7 @@ export const baseStyles = css`
   ${COLOR}
   ${BORDER}
   ${SHADOW}
+  ${TEXT}
   ${TEXT_ALIGN}
   ${TEXT_TRANSFORM}
 `;
@@ -164,5 +176,5 @@ export const baseStyles = css`
  * Base text styles
  */
 export const textStyles = css`
-  ${TEXT}
+  ${SHORTCUT_TEXT}
 `;
