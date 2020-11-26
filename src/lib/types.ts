@@ -299,4 +299,7 @@ export interface BaseProps
 /**
  * Base interface for HTML tag props that use text decoration, such as `p` tags.
  */
-export interface TextBaseProps extends BaseProps, TextProps {}
+export interface TextBaseProps
+  extends BaseProps,
+    ShortcutTextProps,
+    ShortcutTextAlignProps {}
