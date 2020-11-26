@@ -45,8 +45,8 @@ const DIMENSION = css<DimensionProps>`
 const TEXT = css<TextProps>`
   font-size: ${({ fontSize }) => checkType(fontSize)};
   font-weight: ${({ fontWeight }) => checkType(fontWeight, false)};
-  font-weight: ${({ fontBold }) => fontBold && "bold"};
-  font-style: ${({ fontItalic }) => fontItalic && "italic"};
+  font-weight: ${({ bold }) => bold && "bold"};
+  font-style: ${({ italic }) => italic && "italic"};
 `;
 
 /**
@@ -151,9 +151,7 @@ const SHADOW = css<ShadowProps>`
 const SHORTCUT_TEXT = css<ShortcutTextProps>`
   font-size: ${({ size }) => checkType(size)};
   font-weight: ${({ weight }) => checkType(weight, false)};
-  font-weight: ${({ bold }) => bold && "bold"};
   font-weight: ${({ b }) => b && "bold"};
-  font-style: ${({ italic }) => italic && "italic"};
   font-style: ${({ i }) => i && "italic"};
 `;
 

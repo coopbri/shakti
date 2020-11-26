@@ -106,8 +106,8 @@ export interface PaddingProps {
 export interface TextProps {
   fontSize?: number | string;
   fontWeight?: number | string;
-  fontBold?: boolean;
-  fontItalic?: boolean;
+  bold?: boolean;
+  italic?: boolean;
 }
 
 /**
@@ -244,15 +244,13 @@ export interface ShadowProps {
  * Interface for core text (shortcut) props.
  * @param size {number|string} font size
  * @param weight {number|string} font weight
- * @param bold {boolean} bold text
- * @param italic {boolean} italic text
+ * @param b {boolean} bold text
+ * @param i {boolean} italic text
  */
 export interface ShortcutTextProps {
   size?: number | string;
   weight?: number | string;
-  bold?: boolean;
   b?: boolean;
-  italic?: boolean;
   i?: boolean;
 }
 

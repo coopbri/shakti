@@ -277,8 +277,8 @@
       "type": "number or string",
       "notes": "set font weight"
     },
-    { "name": "fontBold", "type": "boolean", "notes": "bold text" },
-    { "name": "fontItalic", "type": "boolean", "notes": "italic text" }
+    { "name": "bold", "type": "boolean", "notes": "bold text" },
+    { "name": "italic", "type": "boolean", "notes": "italic text" }
   ],
   "textAlign": [
     { "name": "textStart", "type": "boolean", "notes": "align text to start" },
@@ -325,8 +325,8 @@
       "type": "number or string",
       "notes": "set font weight"
     },
-    { "name": "bold (b)", "type": "boolean", "notes": "bold text" },
-    { "name": "italic (i)", "type": "boolean", "notes": "italic text" }
+    { "name": "b", "type": "boolean", "notes": "bold text" },
+    { "name": "i", "type": "boolean", "notes": "italic text" }
   ],
   "shortcutTextAlign": [
     { "name": "start", "type": "boolean", "notes": "align text to start" },
