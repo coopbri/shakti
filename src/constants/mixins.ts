@@ -156,6 +156,9 @@ const SHORTCUT_TEXT = css<ShortcutTextProps>`
   font-weight: ${({ weight }) => checkType(weight, false)};
   font-weight: ${({ b }) => b && "bold"};
   font-style: ${({ i }) => i && "italic"};
+  text-decoration: ${({ u }) => u && "underline"};
+  text-decoration: ${({ o }) => o && "overline"};
+  text-decoration: ${({ s }) => s && "line-through"};
 `;
 
 /**

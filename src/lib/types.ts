@@ -252,12 +252,18 @@ export interface ShadowProps {
  * @param weight {number|string} font weight
  * @param b {boolean} bold text
  * @param i {boolean} italic text
+ * @param u {boolean} underline text
+ * @param o {boolean} overline text
+ * @param s {boolean} strikethrough text
  */
 export interface ShortcutTextProps {
   size?: number | string;
   weight?: number | string;
   b?: boolean;
   i?: boolean;
+  u?: boolean;
+  o?: boolean;
+  s?: boolean;
 }
 
 /**

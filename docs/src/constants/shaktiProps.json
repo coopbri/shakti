@@ -333,7 +333,14 @@
       "notes": "set font weight"
     },
     { "name": "b", "type": "boolean", "notes": "bold text" },
-    { "name": "i", "type": "boolean", "notes": "italic text" }
+    { "name": "i", "type": "boolean", "notes": "italic text" },
+    { "name": "u", "type": "boolean", "notes": "underline text" },
+    { "name": "o", "type": "boolean", "notes": "overline text" },
+    {
+      "name": "s",
+      "type": "boolean",
+      "notes": "strikethrough text"
+    }
   ],
   "shortcutTextAlign": [
     { "name": "start", "type": "boolean", "notes": "align text to start" },
