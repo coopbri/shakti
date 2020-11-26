@@ -47,6 +47,9 @@ const TEXT = css<TextProps>`
   font-weight: ${({ fontWeight }) => checkType(fontWeight, false)};
   font-weight: ${({ bold }) => bold && "bold"};
   font-style: ${({ italic }) => italic && "italic"};
+  text-decoration: ${({ underline }) => underline && "underline"};
+  text-decoration: ${({ overline }) => overline && "overline"};
+  text-decoration: ${({ strikethrough }) => strikethrough && "line-through"};
 `;
 
 /**

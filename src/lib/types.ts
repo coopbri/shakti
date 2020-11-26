@@ -100,14 +100,20 @@ export interface PaddingProps {
  * Interface for core text props.
  * @param fontSize {number|string} font size
  * @param fontWeight {number|string} font weight
- * @param fontBold {boolean} bold text
- * @param fontItalic {boolean} italic text
+ * @param bold {boolean} bold text
+ * @param italic {boolean} italic text
+ * @param underline {boolean} underline text
+ * @param overline {boolean} overline text
+ * @param strikethrough {boolean} strikethrough text
  */
 export interface TextProps {
   fontSize?: number | string;
   fontWeight?: number | string;
   bold?: boolean;
   italic?: boolean;
+  underline?: boolean;
+  overline?: boolean;
+  strikethrough?: boolean;
 }
 
 /**

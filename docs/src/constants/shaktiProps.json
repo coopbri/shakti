@@ -278,7 +278,14 @@
       "notes": "set font weight"
     },
     { "name": "bold", "type": "boolean", "notes": "bold text" },
-    { "name": "italic", "type": "boolean", "notes": "italic text" }
+    { "name": "italic", "type": "boolean", "notes": "italic text" },
+    { "name": "underline", "type": "boolean", "notes": "underline text" },
+    { "name": "overline", "type": "boolean", "notes": "overline text" },
+    {
+      "name": "strikethrough",
+      "type": "boolean",
+      "notes": "strikethrough text"
+    }
   ],
   "textAlign": [
     { "name": "textStart", "type": "boolean", "notes": "align text to start" },
