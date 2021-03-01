@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001"
+  },
+  "dependencies": {
+    "next": "10.0.7",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.12.0"
+  }
+}
