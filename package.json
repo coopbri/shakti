@@ -26,12 +26,13 @@
     "build": "rollup -c rollup.config.ts",
     "dev": "rollup -c rollup.config.ts -w",
     "lint": "eslint --ext ts,tsx src/",
+    "sandbox": "concurrently \"yarn dev\" \"cd sandbox && yarn dev\"",
     "test": "jest --config jest.config.json",
     "test:watch": "jest --watch",
     "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
-    "react": ">=16.8",
+    "react": "^17.0.1",
     "react-dom": ">=16.8",
     "styled-components": "^5.0.0"
   },
@@ -50,6 +51,7 @@
     "@typescript-eslint/eslint-plugin": "^4.6.0",
     "@typescript-eslint/parser": "^4.6.0",
     "babel-plugin-styled-components": "^1.11.1",
+    "concurrently": "^6.0.0",
     "eslint": "^7.12.1",
     "eslint-config-airbnb-typescript": "^12.0.0",
     "eslint-config-prettier": "^6.15.0",
