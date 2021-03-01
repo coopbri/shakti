@@ -33,7 +33,7 @@
   },
   "peerDependencies": {
     "react": "^17.0.1",
-    "react-dom": ">=16.8",
+    "react-dom": "^17.0.1",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
@@ -62,6 +62,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.5.3",
+    "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "rollup": "^2.29.0",
     "rollup-plugin-peer-deps-external": "^2.2.3",
